@@ -1,9 +1,70 @@
-\documentclass[a4paper, 12pt]{scrartcl}
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,left = 2.5cm, right = 2.5cm,bottom=2.5cm, top=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{microtype} % hübschere Umbrüche
+\lstset{
+	basicstyle=\ttfamily\small,
+	breaklines=true,
+	breakatwhitespace=false,
+	columns=fullflexible,
+	keepspaces=true,
+	upquote=true,
+}
+\newcommand{\code}[1]{\lstinline!#1!} % Kurzform für Inline-Code
+\usepackage{csquotes}
 \usepackage{graphicx}
+\usepackage{wrapfig}
 \usepackage{hyperref}
+\usepackage{ifthen}
+\usepackage{setspace}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\DeclareNameAlias{default}{family-given}
+\addbibresource{Literatur.bib}
+\thispagestyle{plain}
+\hypersetup{pageanchor=false}
+\setcounter{tocdepth}{3}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\newtheorem{definition}{Definition}[section]
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{orange},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	frame=single,
+	breaklines=true,
+	captionpos=b
+}
+\usepackage[ngerman]{babel}
+\usepackage[automark,headsepline,footsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+\automark[section]{section}
+\ohead{}               % links leer
+\ihead{\rightmark}  
+\ofoot[\pagemark]{\pagemark}
+\ifoot[Automatisiertes Modell- Hochregallager]{Automatisiertes Modell- Hochregallager}
+\pagestyle{scrheadings}
+\ModifyLayer[addvoffset=-1ex]{scrheadings.foot.above.line}
+%\usepackage{chngcntr}
+%\counterwithin{figure}{section}
+%\counterwithin{table}{section}
+%Kapitel + Abschnitt in Markierungen übernehmen
 \begin{document}
-	\thispagestyle{plain}
-	\hypersetup{pageanchor=false}
+	\pagenumbering{gobble}
 	\begin{titlepage}
 		\enlargethispage{4.0cm}
 		\sffamily 								% Serifenlose Grundschrift für die Titelseite einstellen
@@ -17,7 +78,7 @@
 		\begin{center}
 			
 			{\fontsize{20.74pt}{24pt}\selectfont
-				\textbf{}\\[1.5ex]}
+				\textbf{Automatisiertes Modell-Hochregallager}\\[1.5ex]}
 			{\fontsize{14pt}{17pt}\selectfont
 				\textbf{}\\[5ex]}
 			{\fontsize{17pt}{20pt}\selectfont
@@ -58,11 +119,14 @@
 		\end{flushright}
 	\end{titlepage}
 	
-	\hypersetup{pageanchor=true}
-	\tableofcontents
-	\clearpage
-	\pagenumbering{arabic}
-	\setcounter{page}{1}
-	\section{Einleitung}
-	
+\clearpage
+\markright{Inhaltsverzeichnis}
+\tableofcontents
+\newpage
+\cleardoublepage
+\pagenumbering{arabic}	
+\setcounter{page}{1}
+\input{Kapitel/Einleitung.tex}
+
+
 \end{document}
