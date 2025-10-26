@@ -16,5 +16,38 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{Weyrich.2023}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=bf8a3a6aa715d5f7f258eb64309c7f5e}{%
+           family={Weyrich},
+           familyi={W\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag GmbH Deutschland}%
+      }
+      \strng{namehash}{bf8a3a6aa715d5f7f258eb64309c7f5e}
+      \strng{fullhash}{bf8a3a6aa715d5f7f258eb64309c7f5e}
+      \strng{fullhashraw}{bf8a3a6aa715d5f7f258eb64309c7f5e}
+      \strng{bibnamehash}{bf8a3a6aa715d5f7f258eb64309c7f5e}
+      \strng{authorbibnamehash}{bf8a3a6aa715d5f7f258eb64309c7f5e}
+      \strng{authornamehash}{bf8a3a6aa715d5f7f258eb64309c7f5e}
+      \strng{authorfullhash}{bf8a3a6aa715d5f7f258eb64309c7f5e}
+      \strng{authorfullhashraw}{bf8a3a6aa715d5f7f258eb64309c7f5e}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. Auflage}
+      \field{isbn}{978-3-662-56355-7}
+      \field{title}{{Industrielle Automatisierungs- und Informationstechnik}}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
