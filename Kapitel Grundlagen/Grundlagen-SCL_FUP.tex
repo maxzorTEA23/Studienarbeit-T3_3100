@@ -145,3 +145,83 @@ Zu diesen zählen:
 	\item \textbf{Vergleiche und logische Operatoren:}  
 	\texttt{AND, OR, NOT, >, <, =, >=, <=}
 \end{itemize}
+Diese Anweisungen ermöglichen selbst komplexe Programme zu realisieren. Es können mathematische Berechnungen deutlich einfacher durchgeführt werden als beispielsweise in der Programmiersprache \textbf{FUP}.
+\subsubsection*{Vergleich SCL - FUP}
+Die Programmiersprachen \textbf{FUP} und \textbf{SCL} werden beide für die Programmierung speicherprogrammierbarer Steuerungen verwendet.\\
+Da \textbf{SCL} eine Siemens-eigene Sprache ist, konzentriert sich dieser Vergleich ausschließlich auf \textbf{STEP 7}.\\
+Wie bereits erwähnt, ermöglicht \textbf{FUP} eine einfache blockbasierte Programmierung.\\
+\textbf{FUP} eignet sich besonders für einfache Anwendungen, wie beispielsweise die Ansteuerung von Drehstrommotoren. Auch für einfache Schrittketten ist \textbf{FUP} gut geeignet.\\
+Mit zunehmender Programmkomplexität leidet jedoch die Übersichtlichkeit, was zu einer erhöhten Fehleranfälligkeit führen kann.\\
+Um diese Probleme zu vermeiden, wird in großen Produktionsanlagen mit komplexen Abläufen überwiegend textbasiert, also in \textbf{SCL}, programmiert.
+\newpage
+Die folgenden Darstellungen vergleichen beide Sprachen und verdeutlichen ihre Unterschiede.\\
+Dargestellt ist eine einfache Förderbandsteuerung in \textbf{FUP} und \textbf{SCL} im TIA Portal.
+\begin{figure}[H]
+	\centering
+	\label{fig: Beispiel FUP}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{images/PrgBeispiel_FUP}
+		\caption{Funktionsbaustein zur Steuerung des Förderbands}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{images/PrgBeispiel_FUP_2}
+		\caption{Freigabe im Haupt-OB}
+	\end{subfigure}
+	
+	\vspace{0.5cm}
+	
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{images/PrgBeispiel_FUP_3}
+		\caption{Einbindung des FBs im Haupt-OB}
+	\end{subfigure}
+	\caption{Realisierung der Förderbandsteuerung in \textbf{FUP}}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	% Erste Spalte – Förderband-Baustein
+	\begin{subfigure}[t]{0.4\textwidth}
+		\centering
+		\begin{lstlisting}[language=Pascal]
+IF #OFF THEN
+	#SR_Band := FALSE;	
+ELSIF #ON THEN
+	#SR_Band := TRUE;
+END_IF;
+			
+#OU1 := #SR_Band AND #ENABLE;
+		\end{lstlisting}
+		\caption{SCL-Code des Förderband-Bausteins}
+		\label{lst:Foerderband}
+	\end{subfigure}
+	\hfill
+	% Zweite Spalte – Aufruf im Hauptprogramm
+	\begin{subfigure}[t]{0.4\textwidth}
+		\centering
+		\begin{lstlisting}[language=Pascal]
+IF NOT "S0_Stop" AND "S1_Anl_Ein" THEN
+	"Pl_Freigabe" := TRUE;
+ELSIF "S0_Stop" THEN
+	"Pl_Freigabe" := FALSE;
+END_IF;
+			
+"Foerderband"(
+OFF    := "B2_vorne",
+ON     := "B1_hinten",
+ENABLE := "Pl_Freigabe",
+OU1    => "Q1_Band");
+		\end{lstlisting}
+		\caption{Aufruf des Förderband-Bausteins im Hauptprogramm}
+		\label{lst:Foerderband_call}
+	\end{subfigure}
+	\caption{Realisierung des Förderbandprogramms in \textbf{SCL}}
+	\label{fig:Foerderband_Listing}
+\end{figure}
+
+Anhand des Beispiels wird deutlich, dass \textbf{FUP} auf den ersten Blick leichter verständlich wirkt, da es sich um die grafische Verschaltung logischer Funktionen handelt.\\
+Auf den zweiten Blick zeigt sich jedoch, dass der Programmieraufwand deutlich höher ist als in \textbf{SCL}. In \textbf{SCL} kann dieselbe Funktionalität mit wenigen, klar strukturierten Codezeilen realisiert werden, ohne das Programm mit zusätzlichen Netzwerken zu überladen.\\
+Zusammenfassend lässt sich festhalten, dass sowohl \textbf{FUP} als auch \textbf{SCL} ihre jeweiligen Vor- und Nachteile besitzen. Je nach Anwendung und Komplexität des Prozesses fällt die Entscheidung für die eine oder die andere Programmiersprache.
