@@ -51,6 +51,132 @@
       \field{title}{{PLC Programming In Instruction List According To IEC 61131-3}}
       \field{year}{2022}
     \endentry
+    \entry{isa_iolink_architecture_2016}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e09f2211be542d676ccc73eed55cfff1}{%
+           family={Automation},
+           familyi={A\bibinitperiod},
+           given={International\bibnamedelima Society},
+           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{fullhash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{fullhashraw}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{bibnamehash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{authorbibnamehash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{authornamehash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{authorfullhash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{authorfullhashraw}{e09f2211be542d676ccc73eed55cfff1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{InTech Magazine}
+      \field{note}{Zugriff am 25. Oktober 2025}
+      \field{title}{IO-Link Field Device Protocol Architecture}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.isa.org/intech-home/2016/may-june/features/io-link-field-device-protocol-architecture
+      \endverb
+      \verb{url}
+      \verb https://www.isa.org/intech-home/2016/may-june/features/io-link-field-device-protocol-architecture
+      \endverb
+    \endentry
+    \entry{IO_Link}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=69c1e95c652be0001b02c0219f2a1e5b}{%
+           family={e.V.},
+           familyi={e\bibinitperiod},
+           given={PROFIBUS\bibnamedelima Nutzerorganisation},
+           giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IO-Link}%
+      }
+      \strng{namehash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{fullhash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{fullhashraw}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{bibnamehash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{authorbibnamehash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{authornamehash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{authorfullhash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{authorfullhashraw}{69c1e95c652be0001b02c0219f2a1e5b}
+      \field{sortinit}{e}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 02. November 2025}
+      \field{title}{IO-Link Systembeschreibung}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.io-link.com
+      \endverb
+      \verb{url}
+      \verb https://www.io-link.com
+      \endverb
+    \endentry
+    \entry{Bustopologien}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=28d90a5cfa73414547b9efb2a0df83af}{%
+           family={GmbH},
+           familyi={G\bibinitperiod},
+           given={DriveCon},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{fullhash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{fullhashraw}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{bibnamehash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{authorbibnamehash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{authornamehash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{authorfullhash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{authorfullhashraw}{28d90a5cfa73414547b9efb2a0df83af}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 02. November 2025}
+      \field{title}{FeldBustopologien}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.drivecon.de/de/lexikon/feldbus
+      \endverb
+      \verb{url}
+      \verb https://www.drivecon.de/de/lexikon/feldbus
+      \endverb
+    \endentry
+    \entry{IFM_IO_Link_Master}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a8055f6862d48178c0c5c1b8d55ba78d}{%
+           family={gmbh},
+           familyi={g\bibinitperiod},
+           prefix={ifm\bibnamedelima electronic},
+           prefixi={i\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{bibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorbibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authornamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \field{sortinit}{g}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 02. November 2025}
+      \field{title}{IO-Link Master mit PROFINET-Schnittstelle AL1100}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.ifm.com/de/de/product/AL1100#documents
+      \endverb
+      \verb{url}
+      \verb https://www.ifm.com/de/de/product/AL1100#documents
+      \endverb
+    \endentry
     \entry{Hering}{book}{}{}
       \name{author}{3}{}{%
         {{hash=09c4544dd982ebdee6febd418b7901e1}{%
@@ -114,6 +240,67 @@
       \field{isbn}{978-3-800-74409-1}
       \field{title}{{Programmierung mit Strukturierter Text: Steuerungs-Funktionsbausteine mit ST oder SCL einfach und schnell erstellen. Für Ein- und AWL-Umsteiger - Softcover}}
       \field{year}{2017}
+    \endentry
+    \entry{Langmann.2021}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=cdb383916029b1af50538ecbc534b9e1}{%
+           family={Langmann},
+           familyi={L\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Carl Hanser Verlag München}%
+      }
+      \strng{namehash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{fullhash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{fullhashraw}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{bibnamehash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{authorbibnamehash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{authornamehash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{authorfullhash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{authorfullhashraw}{cdb383916029b1af50538ecbc534b9e1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. Auflage}
+      \field{isbn}{978-3-446-46984-6}
+      \field{title}{Vernetzte Systeme für die Automatisierung 4.0}
+      \field{year}{2021}
+    \endentry
+    \entry{Schnell.2019}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=d1f007169abbe760b23cd50b12798454}{%
+           family={Schnell},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=298ce9252801c0cf1935f5e9d0c62469}{%
+           family={Wiedemann},
+           familyi={W\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag GmbH Deutschland}%
+      }
+      \strng{namehash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{fullhash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{fullhashraw}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{bibnamehash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{authorbibnamehash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{authornamehash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{authorfullhash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{authorfullhashraw}{ec73d41378e039b4d8301d9d1d21ee65}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{9. Auflage}
+      \field{isbn}{978-3-658-23688-5}
+      \field{title}{{Bussysteme in der Automatisierungs- und Prozesstechnik}}
+      \field{year}{2019}
     \endentry
     \entry{Seitz.2021}{book}{}{}
       \name{author}{1}{}{%

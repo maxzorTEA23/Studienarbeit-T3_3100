@@ -1,85 +1,126 @@
 \subsubsection{Industrielle Bussysteme}
 In der Automatisierung sind Kommunikationsprotokolle entscheidend für die Vernetzung einzelner Systeme. Die Funktionalität einer automatisierten Anlage basiert auf der erfolgreichen Kommunikation der einzelnen Komponenten.
 \subsubsection*{Bussysteme in der Automatisierungstechnik}
-Ein großer Bestandteil im Bereich Kommunikation zwischen verschiedenen Teilnehmern bilden sogenannte Bussysteme.\\
-Sie kommen zum Einsatz wenn eine Steuerung mit den Sensoren bzw. Aktoren eines Systems, effizient, kommunizieren möchte. Die Steuerung kann z.B. eine \textbf{SPS} oder ein \textbf{Mikrocontroller} sein.\\
-Früher wurden Signale, hauptsächlich, über Hartverdrahtung versendet. Diese Methode erweist sich als effektiv aber sehr aufwändig zu implementieren.\\
-Deswegen wurden die bereits erwähnten Bussysteme eingeführt. Mit deren Hilfe ist es möglich über sehr geringen Verdrahtungsaufwand mit Teilnehmern innerhalb eines Systems zu kommunizieren.\\
-Ein Bussystem besteht aus einer Leitung, mit der mehrere Teilnehmer angesprochen werden können. Die Topologie ist, hierbei, vielfältig. Es gibt sogenannte \textbf{Stern}- \textbf{Linien}- oder auch \textbf{Kreis} Topologien.
+Ein großer Bestandteil im Bereich der Kommunikation zwischen verschiedenen Teilnehmern bilden sogenannte Bussysteme.\\
+Sie kommen zum Einsatz, wenn eine Steuerung mit den Sensoren bzw. Aktoren eines Systems effizient kommunizieren soll. Die Steuerung kann z.\,B. eine \textbf{SPS} oder ein \textbf{Mikrocontroller} sein.\\
+Früher wurden Signale hauptsächlich über Hartverdrahtung übertragen. Diese Methode war zwar zuverlässig, jedoch sehr aufwändig zu implementieren und mit hohem Material- und Zeitaufwand verbunden.\\
+Deshalb wurden die bereits erwähnten Bussysteme eingeführt. Mit deren Hilfe ist es möglich, mit geringem Verdrahtungsaufwand mit mehreren Teilnehmern innerhalb eines Systems zu kommunizieren.\\
+Ein Bussystem besteht grundsätzlich aus einer Leitung, über die mehrere Teilnehmer angesprochen werden können. Die Topologie ist hierbei vielfältig. Es gibt sogenannte \textbf{Stern}-, \textbf{Linien}- oder auch \textbf{Ring}-Topologien.
 \begin{figure}[H]
-	Inhalt...
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/Topologien}
+	\caption{Gängige Bus- Topologien; Quelle \cite{Bustopologien}}
+	\label{Bustopologien}
 \end{figure}
-Die am häufigsten angewandte Methode, ist die Kommunikation über \textbf{Linie}.\\
-Hierbei werden mehrere Teilnehmer über einzelne Abzweige nacheinander angesteuert.
-Bussysteme können auf den verschiedensten Ebenen der Automatisierungspyramide\cite{bibid} zum Einsatz kommen. Der Haupteinsatz erfolgt jedoch auf der Feld- und Steuerungsebene.\\
-Weiterhin gibt es verschiedene Arten von Bussysteme.\\
+Die am häufigsten angewandte Methode ist die Kommunikation über eine \textbf{Linientopologie}.\\
+Hierbei werden mehrere Teilnehmer über einzelne Abzweige nacheinander angesteuert.\\
+Bussysteme können auf den verschiedensten Ebenen der Automatisierungspyramide\cite{IO_Link} zum Einsatz kommen. Der Haupteinsatz erfolgt jedoch auf der Feld- und Steuerungsebene.\\
+Weiterhin gibt es verschiedene Arten von Bussystemen, die sich in ihrer Struktur, Geschwindigkeit und Übertragungsart unterscheiden.\\
 Die am häufigsten verwendeten sind im Folgenden aufgelistet:
 \begin{itemize}
-	\item Feldbus- basierte Kommunikationssysteme (z.B. ProfiBus)
-	\item Ethernet- Basierte Kommunikationssysteme (z.B. PROFINET)
-	\item Punkt-zu-Punkt (PTP) Systeme (z.B. IO- Link)
-\end{itemize}\newpage
-Hier eine kurze Gegenüberstellung der einzelnen Protokolle:
-\begin{figure}[H]
-	Inhalt...
-\end{figure}
+	\item Feldbus-basierte Kommunikationssysteme (z.\,B. \textbf{Profibus})
+	\item Ethernet-basierte Kommunikationssysteme (z.\,B. \textbf{PROFINET})
+	\item Punkt-zu-Punkt-Systeme (z.\,B. \textbf{IO-Link})
+\end{itemize}
+\newpage
+Im Folgenden eine kurze Gegenüberstellung der einzelnen Protokolle:
+\begin{table}[H]
+	\centering
+	\label{tab:busvergleich}
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+		\hline
+		\textbf{Kriterium} & \textbf{IO-Link} & \textbf{PROFINET} & \textbf{PROFIBUS} \\ \hline
+		\textbf{Kommunikations- prinzip}  & Punkt-zu-Punkt (PTP) & Ethernet-basiert & Feldbus-basiert \\ \hline
+		\textbf{Topologie} & Linie, Stern & Linie, Stern, Ring & Linie, Baum \\ \hline
+		\textbf{Übertragungsart} & Ungeschirmte Standardleitung (3-adrig) & Ethernet-Kabel (Cat 5/6) & Geschirmtes Twisted-Pair-Kabel \\ \hline
+		\textbf{Kommunikations- rate} & 4{,}8 / 38{,}4 / 230{,}4\,kBaud & bis 100\,Mbit/s & bis 12\,Mbit/s \\ \hline
+		\textbf{Kommunikations- Richtung} & Bidirektional & Bidirektional & Halbduplex \\ \hline
+		\textbf{Adressierung} & Automatische Geräteidentifikation (IODD) & IP-Adresse / Gerätetyp & Manuelle Geräteadresse \\ \hline
+		\textbf{Einsatzebene} & Sensor-/Aktor-Ebene (Feldebene) & Steuerungs- und Leitebene & Feld- und Steuerungsebene \\ \hline
+		\textbf{Diagnosefähig- keit} & Umfassend (Gerätestatus, Parametrierung, Fehlerdiagnose) & Hoch (Netzwerkdiagnose, Gerätediagnose) & Mittel (Telegrammfehler, Gerätefehler) \\ \hline
+		\textbf{Verdrahtungs- aufwand} & Sehr gering & Mittel & Hoch \\ \hline
+		\textbf{Integration in SPS-Systeme} & Über IO-Link-Master (Gateway) & Direkt (z.\,B. TIA Portal) & Über DP-Schnittstelle \\ \hline
+		\textbf{Typische Anwendung} & Sensorik, Aktorik, Handhabungstechnik & Steuerung, Kommunikation, Anlagenvernetzung & Maschinensteuer., Antriebsregelung \\ \hline
+		\textbf{Standardisierung} & IEC~61131-9 & IEC~61158 / IEEE~802.3 & IEC~61158 \\ \hline
+	\end{tabular}
+	\caption{Vergleich der Kommunikationssysteme IO-Link, PROFINET und PROFIBUS; Quellen: \cite{IO_Link}\cite{Schnell.2019}\cite{Langmann.2021}}
+\end{table}
 \subsubsection{IO-Link}
 IO-Link ist ein Kommunikationssystem, welches der Anbindung intelligenter Sensoren und Aktoren dient.\\
-Es wurde zum füllen der Lücke zwischen Feldbussen und IE- Systemen entwickelt. Der Standard ist nach IEC 61131-9 definiert. Es wird häufig in Fabrik- Automatisierungsanlagen verwendet.
-\subsubsection*{Aufbau und Funktionsweise von IO- Link}
-IO- Link ist eine Kommunikationssystem was nach dem PTP (Point-To-Point) Prinzip arbeitet. Das bedeutet es werden mehrere Teilnehmer Punkt zu Punkt angesteuert. Der \textbf{IO-Link- Master} ist hierbei mit den \textbf{IO- Link- Devices} PTP verbunden. Dieser stellt die Schnittstelle zwischen der Steuerung (\textbf{SPS}) und der Sensor/Aktor- Ebene dar.\\
-Das System arbeitet \textbf{bidirektional}\cite{bibid}. Das bedeutet der IO- Link- Master kann sowohl Prozessdaten empfangen, als auch neue Parameter an diese Senden (z.B. \textbf{RFID}).\\
-Die Verbindung erfolgt über 3- Polige Standard- Leitungen. Dadurch lässt sich IO-Link, problemlos, in das Gesamtsystem integrieren.\\
-Eine separate Busverkabelung ist daher nicht notwendig.\\
-Der IO- Link- Master kann über ein übergeordnetes Bussystem (ProfiBus, PROFINET) dann mit der SPS kommunizieren.
+Es wurde entwickelt, um die Lücke zwischen Feldbussen und Industrial-Ethernet-Systemen zu schließen. Der Standard ist in der Norm IEC~61131-9 definiert. IO-Link wird häufig in Fabrikautomatisierungsanlagen eingesetzt.
+\subsubsection*{Aufbau und Funktionsweise von IO-Link}
+IO-Link ist ein Kommunikationssystem, das nach dem \textbf{Point-to-Point} (PTP)-Prinzip arbeitet. Das bedeutet, es werden mehrere Teilnehmer Punkt zu Punkt angesteuert. Der \textbf{IO-Link-Master} ist hierbei mit den \textbf{IO-Link-Devices} PTP-verbunden. Dieser stellt die Schnittstelle zwischen der Steuerung (\textbf{SPS}) und der Sensor-/Aktor-Ebene dar.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/IO_Link_Architektur}
+	\caption{Architektur IO\_Link; Quelle \cite{IO_Link}}
+	\label{IO_Link_Architektur}
+\end{figure}
+Das System arbeitet \textbf{bidirektional}\cite{IO_Link}. Das bedeutet, der IO-Link-Master kann sowohl Prozessdaten empfangen als auch neue Parameter an die Devices senden (z.\,B. \textbf{RFID}).\\
+Die Verbindung erfolgt über dreipolige Standardleitungen\ref{IO_Link_Anschluss}. Dadurch lässt sich IO-Link problemlos in das Gesamtsystem integrieren. Eine separate Busverkabelung ist nicht notwendig\cite{isa_iolink_architecture_2016}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/IO_Link_3Polig}
+	\caption{Anschlussbelegung IO-Link; Quelle \cite{IO_Link}}
+	\label{IO_Link_Anschluss}
+\end{figure}
+Der IO-Link-Master\ref{IO_Link_Master} kann über ein übergeordnetes Bussystem (z.\,B. \textbf{Profibus}, \textbf{PROFINET}) mit der SPS kommunizieren\cite{Langmann.2021}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{images/AL1100}
+	\caption{Master IO\_Link; Quelle \cite{IFM_IO_Link_Master}}
+	\label{IO_Link_Master}
+\end{figure}
 \subsubsection*{Kommunikation und Datenaustausch}
-Die Kommunikation über IO- Link erfolgt seriell. Hierbei wird, bei der Übertragung, auf feste Baudraten, von 4,8 kBaud, 38,4 kBaud oder 230,4 kBaud, gesetzt.\\\\
-Die Datenkommunikation gliedert sich hierbei in drei Hauptarten:
+Die Kommunikation über IO-Link erfolgt seriell. Hierbei wird mit festen Baudraten von 4{,}8\,kBaud, 38{,}4\,kBaud oder 230{,}4\,kBaud übertragen.\\\\
+Die Datenkommunikation gliedert sich in drei Hauptarten\cite{IO_Link}:
 \begin{itemize}
-	\item \textbf{Prozessdaten}:
+	\item \textbf{Prozessdaten}:\\
 	Diese werden zyklisch zwischen Master und Device ausgetauscht. Sie enthalten z. B. Messwerte von Sensoren oder Schaltzustände von Aktoren.
-	\item \textbf{Servicedaten (Parameterdaten)}:
-	Sie werden azyklisch übertragen und dienen zur Parametrierung oder Konfiguration der Geräte. So können etwa Schaltpunkte, Messbereiche oder Filterzeiten direkt über die Steuerung angepasst werden.
-	\item \textbf{Ereignisdaten}:
+	\item \textbf{Servicedaten (Parameterdaten)}:\\
+	Sie werden azyklisch übertragen und dienen zur Parametrierung oder Konfiguration der Geräte. So können beispielsweise Schaltpunkte, Messbereiche oder Filterzeiten direkt über die Steuerung angepasst werden.
+	\item \textbf{Ereignisdaten}:\\
 	Hierbei handelt es sich um Status- oder Fehlermeldungen, die das Device bei bestimmten Zuständen (z. B. Übertemperatur, Kabelbruch oder Spannungsfehler) an den Master sendet.
 \end{itemize}
-Durch diese geschickte Aufteilung ist eine gezielte Überwachung, Diagnose bei Fehlern und Konfiguration der einzelnen Module möglich. Eine Prozessunterbrechung ist hierfür nicht notwendig.\newpage
-Auf Protokollebene wird zwischen 3 Schichten unterschieden:
+Durch diese Aufteilung ist eine gezielte Überwachung, Diagnose bei Fehlern und Konfiguration der einzelnen Module möglich. Eine Prozessunterbrechung ist hierfür nicht notwendig.\\
+Auf Protokollebene wird zwischen drei Schichten unterschieden\cite{IO_Link}:
 \begin{itemize}
 	\item \textbf{Physikalische Schicht} – definiert die elektrische Verbindung über die dreipolige Leitung.
 	\item \textbf{Datenverbindungsschicht} – regelt das Telegrammformat und die Fehlererkennung.
 	\item \textbf{Applikationsschicht} – beschreibt den Austausch von Prozess-, Service- und Ereignisdaten.
 \end{itemize}
-\subsubsection*{Komponenten eines IO-Link-Systems} 
-Ein vollständiges IO-Link- System besteht in der Regel aus folgenden Komponenten:
+\subsubsection*{Komponenten eines IO-Link-Systems}
+Ein vollständiges IO-Link-System besteht in der Regel aus folgenden Komponenten\cite{IO_Link}:
 \begin{itemize}
-	\item \textbf{IO-Link- Master}:
+	\item \textbf{IO-Link-Master}:\\
 	Er verwaltet die Kommunikation zu den einzelnen IO-Link-Devices und bildet die Schnittstelle zur übergeordneten Steuerung.
 	Je nach Ausführung kann der Master als Schaltschrankmodul oder als Feldmodul ausgeführt sein. Letzteres wird direkt in der Anlage montiert, wodurch sich Installationsaufwand und Verkabelungslänge reduzieren.
-	\item \textbf{IO-Link-Devices}:
+	\item \textbf{IO-Link-Devices}:\\
 	Hierbei handelt es sich um Sensoren, Aktoren oder andere Feldgeräte, die über IO-Link kommunizieren. Typische Beispiele sind Drucksensoren, Wegmesssysteme, Ventilinseln, RFID-Leseeinheiten oder Smart Lights.
-	Jedes Device verfügt über eine IODD-Datei (IO Device Description), in der alle Geräteparameter, Kommunikationsdaten und Diagnosemöglichkeiten beschrieben sind. Diese Datei wird im Engineering-Tool der Steuerung verwendet, um das Gerät automatisch zu erkennen und korrekt zu parametrieren.
-	\item \textbf{Verkabelung}:
-	IO-Link nutzt standardisierte, ungeschirmte Leitungen mit M12- oder M8-Steckverbindern. Die Kabellängen betragen typischerweise bis zu 20 m zwischen Master und Device. Da das Signal digital übertragen wird, ist die Verbindung unempfindlich gegenüber elektromagnetischen Störungen und Spannungsabfällen.
+	Jedes Device verfügt über eine IODD-Datei (\textit{IO Device Description}), in der alle Geräteparameter, Kommunikationsdaten und Diagnosemöglichkeiten beschrieben sind. Diese Datei wird im Engineering-Tool der Steuerung verwendet, um das Gerät automatisch zu erkennen und korrekt zu parametrieren.
+	\item \textbf{Verkabelung}:\\
+	IO-Link nutzt standardisierte, ungeschirmte Leitungen mit M12- oder M8-Steckverbindern. Die Kabellängen betragen typischerweise bis zu 20\,m zwischen Master und Device. Da das Signal digital übertragen wird, ist die Verbindung unempfindlich gegenüber elektromagnetischen Störungen und Spannungsabfällen.
 \end{itemize}
 \subsubsection*{Zusammenfassung}
-Per IO-Link ist eine Kommunikation bis in die untere Feldebene möglich. Analoge Signale sind hierbei überflüssig, da die Schnittstelle standardisiert ist. Weiterhin lassen sich Geräte identifizieren und parametrieren. Außerdem stehen umfassende Diagnosemöglichkeiten zur Verfügung.\\
-Damit trägt IO-Link wesentlich zur Transparenz, Flexibilität und Wartungsfreundlichkeit moderner Automatisierungssysteme bei und bildet eine wichtige Grundlage für Konzepte wie Industrie 4.0\cite{bibid}.\newpage
+Über IO-Link ist eine Kommunikation bis in die unterste Feldebene möglich. Analoge Signale sind hierbei überflüssig, da die Schnittstelle standardisiert ist. Weiterhin lassen sich Geräte identifizieren und parametrieren. Außerdem stehen umfassende Diagnosemöglichkeiten zur Verfügung.\\
+Damit trägt IO-Link wesentlich zur Transparenz, Flexibilität und Wartungsfreundlichkeit moderner Automatisierungssysteme bei und bildet eine wichtige Grundlage für Konzepte wie \textbf{Industrie~4.0}\cite{IO_Link}.
 \subsubsection{Vorteile und Nutzen in der Praxis}
 Der Einsatz von IO-Link in der Industrie bringt zahlreiche Vorteile mit sich. Es werden technische Defizite von klassischen Bus- und Anschlusssystemen eliminiert. Neben der Vereinfachung der Verdrahtung bietet das System eine hohe Flexibilität, verbesserte Diagnosefähigkeiten sowie eine sehr gute digitale Kommunikation bis in die Feldebene hinein.\\
-Durch genannte Punkte wird nicht nur die Leistungsfähigkeit der Anlage gesteigert sondern auch die Wirtschaftlichkeit und Nachhaltigkeit, in einer Produktion, verbessert.
+Durch die genannten Punkte wird nicht nur die Leistungsfähigkeit der Anlage gesteigert, sondern auch die Wirtschaftlichkeit und Nachhaltigkeit in einer Produktion verbessert.\newpage
 \subsubsection*{Technische Vorteile}
-Ein zentraler technischer Vorteil von IO-Link besteht in der vollständig digitalen Signalübertragung zwischen dem IO-Link-Master und den angeschlossenen Devices. Dadurch entfallen typische Nachteile analoger Schnittstellen, wie Messfehler durch Spannungsabfall, Rauschen oder Kalibrierungsabweichungen. Jeder über IO-Link verbundene Sensor oder Aktor überträgt exakte Prozessdaten in digitaler Form, wodurch die Messqualität und Zuverlässigkeit deutlich erhöht werden.\\
-Ein weiterer Vorteil ist die sogenannte bidirektionale Kommunikation. Hierbei ist es möglich, dass der IO-Link- Master Daten empfangen kann, sowie in der Lage ist, die Parameter der Sensoren/Aktoren zu beschreiben.\\
-Darüber hinaus bietet IO-Link standardisierte Schnittstellen und Datenstrukturen, die herstellerübergreifend kompatibel sind. Jedes Gerät wird anhand seiner IODD-Datei (IO Device Description) automatisch erkannt, was die Integration in bestehende Systeme erheblich vereinfacht. Diese Einheitlichkeit führt zu einer hohen Austauschbarkeit der Komponenten, ohne dass Änderungen in der SPS-Software oder in der Verdrahtung notwendig sind.
+Ein zentraler technischer Vorteil von IO-Link besteht in der vollständig digitalen Signalübertragung zwischen dem IO-Link-Master und den angeschlossenen Devices. Dadurch entfallen typische Nachteile analoger Schnittstellen wie Messfehler durch Spannungsabfall, Rauschen oder Kalibrierungsabweichungen. Jeder über IO-Link verbundene Sensor oder Aktor überträgt exakte Prozessdaten in digitaler Form, wodurch die Messqualität und Zuverlässigkeit deutlich erhöht werden.\\
+Ein weiterer Vorteil ist die sogenannte bidirektionale Kommunikation. Hierbei ist es möglich, dass der IO-Link-Master Daten empfangen kann, sowie in der Lage ist, die Parameter der Sensoren oder Aktoren zu beschreiben.\\
+Darüber hinaus bietet IO-Link standardisierte Schnittstellen und Datenstrukturen, die herstellerübergreifend kompatibel sind. Jedes Gerät wird anhand seiner IODD-Datei (IO Device Description) automatisch erkannt, was die Integration in bestehende Systeme erheblich vereinfacht\cite{IO_Link}. Diese Einheitlichkeit führt zu einer hohen Austauschbarkeit der Komponenten, ohne dass Änderungen in der SPS-Software oder in der Verdrahtung notwendig sind.
 \subsubsection{Weitere Vorteile}
-Durch den gesparten Aufwand der Verdrahtung, werden große Kosten eingespart. Diese können an anderer Stelle, besser verwendet werden.\\
-Da ein IO-Link Master in der Lage ist, sowohl klassische als auch digitale Signale zu verarbeiten, fallen auch hier weitere Bauteile zur Verarbeitung bestimmter Signalarten weg. Diese Punkte führen zu einer Erhöhung bzw. Verbesserung der Wirtschaftlichkeit. Dadurch kann nachhaltiger und effektiver gearbeitet werden.
+Durch den verringerten Verdrahtungsaufwand können erhebliche Kosten eingespart werden. Diese können an anderer Stelle effizienter eingesetzt werden.\\
+Da ein IO-Link-Master in der Lage ist, sowohl klassische als auch digitale Signale zu verarbeiten, entfallen zusätzliche Baugruppen zur Verarbeitung bestimmter Signalarten. Diese Punkte führen zu einer Erhöhung bzw. Verbesserung der Wirtschaftlichkeit. Dadurch kann nachhaltiger und effektiver gearbeitet werden.
 \subsubsection*{Erweiterte Diagnosemöglichkeiten}
-Eine besondere Eigenschaft von IO-Link liegt in den umfassenden Diagnosemöglichkeiten, die dem Anwender zur Verfügung stehen. Jedes \textbf{Device} ist in der Lage, sich selbst zu diagnostizieren und die dementsprechenden Informationen an den \textbf{IO-Link-Master} zu übermitteln.\\
-Somit werden Fehler wie Kabelbruch, Kurzschluss, Unterspannung etc., sofort, an die Steuerung gemeldet. Dadurch ist ein schnelles und effektives \textit{Trouble Monitoring} gegeben. Das führt dazu, dass langfristig Fehlerquellen und Anfälligkeiten in Systemen, ausgemacht und eliminiert werden können.
+Eine besondere Eigenschaft von IO-Link liegt in den umfassenden Diagnosemöglichkeiten, die dem Anwender zur Verfügung stehen. Jedes \textbf{Device} ist in der Lage, sich selbst zu diagnostizieren und die entsprechenden Informationen an den \textbf{IO-Link-Master} zu übermitteln.\\
+Somit werden Fehler wie Kabelbruch, Kurzschluss oder Unterspannung sofort an die Steuerung gemeldet. Dadurch ist ein schnelles und effektives \textit{Trouble Monitoring} gegeben. Dies führt dazu, dass langfristig Fehlerquellen und Anfälligkeiten in Systemen erkannt und gezielt beseitigt werden können.
 \subsubsection{Praxisbeispiel}
-In der industriellen Praxis findet IO-Link zunehmend Anwendung bei intelligenten Sensoren und Aktoren, etwa in Montage- und Prüfprozessen oder bei der Handhabungstechnik.
-Ein typisches Beispiel ist die Integration eines IO-Link-Füllstandssensors oder Drucksensors in ein SPS-System. Die Messwerte werden dabei digital und störungsfrei übertragen, während gleichzeitig Geräteparameter über die Steuerung angepasst werden können – etwa der Schaltpunkt oder der Messbereich.
+In der industriellen Praxis findet IO-Link zunehmend Anwendung bei intelligenten Sensoren und Aktoren, etwa in Montage- und Prüfprozessen oder bei der Handhabungstechnik.\\
+Ein typisches Beispiel ist die Integration eines IO-Link-Füllstandssensors oder Drucksensors in ein SPS-System. Die Messwerte werden dabei digital und störungsfrei übertragen, während gleichzeitig Geräteparameter über die Steuerung angepasst werden können – etwa der Schaltpunkt oder der Messbereich\cite{IO_Link}.
 \subsubsection{Zusammenfassung}
-IO-Link vereint einfache Installation mit intelligenter Kommunikation. Die Technologie schafft eine durchgängige Datenbasis von der Feldebene bis zur Steuerung und ermöglicht so eine effiziente, flexible und zukunftssichere Automatisierung. Durch die Kombination aus digitaler Signalübertragung, erweiterter Diagnose und automatischer Parametrierung wird IO-Link zu einem zentralen Bestandteil moderner Industrie-4.0-Architekturen.
+IO-Link vereint einfache Installation mit intelligenter Kommunikation. Die Technologie schafft eine durchgängige Datenbasis von der Feldebene bis zur Steuerung und ermöglicht so eine effiziente, flexible und zukunftssichere Automatisierung.\\
+Durch die Kombination aus digitaler Signalübertragung, erweiterter Diagnose und automatischer Parametrierung wird IO-Link zu einem zentralen Bestandteil moderner Industrie-4.0-Architekturen.
