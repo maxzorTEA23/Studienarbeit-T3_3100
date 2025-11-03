@@ -1,0 +1,62 @@
+\subsubsection{Aufbau des Hochregallagers}
+
+Bei der zu optimierenden Anlage handelt es sich um ein \textbf{Modell-Hochregallager} im Laborraum H001 der \textbf{Dualen Hochschule Baden-Württemberg} am Campus Friedrichshafen.  
+Diese dient dazu, den Studierenden bei vertretbaren Anschaffungskosten ein Modell einer \textbf{modernen Hochregalanlage}, wie sie auch in zahlreichen \textbf{Industriebetrieben} zu finden ist, zu bieten.
+
+Um den Aufbau der Anlage fachgerecht erklären zu können, ist die Definition eines \textbf{Koordinatensystems} für die Bewegung der \textbf{Einlagerungsvorrichtung} notwendig:
+
+\tdplotsetmaincoords{70}{120}  % Perspektive: Elevation und Azimut
+
+% Perspektive: Elevation = 70°, Azimut = 0° (x nach rechts, y nach hinten, z nach oben)
+\tdplotsetmaincoords{70}{0}
+\begin{center} % Zentriert die Grafik
+\begin{tikzpicture}[tdplot_main_coords, scale=2]
+	
+	
+	% Achsen
+	\draw[->, thick] (0,0,0) -- (3,0,0) node[anchor=north east]{$x$ Druckluftzylinder};
+	\draw[->, thick] (0,0,0) -- (2,3,0) node[anchor=north west]{$y$ Linearelement};
+	\draw[->, thick] (0,0,0) -- (0,0,3) node[anchor=south]{$z$ Kugelumlaufspindel};
+	
+	  % Quadrat auf der yz-Ebene (x=0, zwischen y und z)
+	 % Punkte: Ursprung, y-Achse, y+z, z-Achse
+	 \fill[blue!10, opacity=0.7] 
+	 (0,0,0) -- (2,3,0) -- (2,3,3) -- (0,0,3) -- cycle;
+	 
+	 % Beschriftung der Fläche
+	 \node at (1,1.5,1.5) {\textbf{Regalfassade}};
+	
+
+
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+	\item x-Achse -> Bewegung des Trägers in das Hochregal
+	\item y-Achse -> Bewegung des Trägers in Horizontale entlang der Regalstruktur
+	\item z-Achse -> Bewegung des Trägers in Vertikale entlang der Regalstruktur
+\end{itemize}
+
+Die \textbf{Förder- und Bewegungssysteme} der Modell-Hochregalanlage stellen das zentrale Element zur Realisierung \textbf{automatisierter Lagerprozesse} dar. Die Anlage ist so konzipiert, dass sie die \textbf{Ein- und Auslagerung} von Lagergütern in einem mehrstöckigen Regalsystem ermöglicht. Die Bewegungsachsen werden in drei Dimensionen unterteilt: \textbf{horizontal}, \textbf{vertikal} und die eigentliche \textbf{Einlagerbewegung}.
+\\
+
+Die \textbf{horizontale Verfahrbewegung} (y-Achse) des Regalbediengeräts erfolgt über ein \textbf{Linearelement}, das entlang einer \textbf{Führungsschiene} verläuft. Das Linearsystem basiert auf einem \textbf{motorgetriebenen Schlitten}, welcher präzise Positionierungen entlang der Regalfassade ermöglicht. Die Führungsschiene gewährleistet eine stabile und reibungsarme Bewegung, während der Antrieb über einen \textbf{Schrittmotor} erfolgt, der über eine \textbf{Steuerungseinheit} angesteuert wird. Die Positionserfassung wird gegenwärtig durch \textbf{Timer im Steuerungsprogramm} realisiert. Die Positionierung der \textbf{Endschalter} erfolgt ausschließlich am Ende der Achsen.
+\\
+
+Die \textbf{vertikale Bewegung} (z-Achse) wird durch eine \textbf{Kugelumlaufspindel} realisiert, die eine hohe Positioniergenauigkeit und mechanische Effizienz bietet. Die Spindel ist mit einem \textbf{rotatorischen Antrieb} gekoppelt, der die Drehbewegung in eine \textbf{lineare Hubbewegung} umsetzt. Die Verwendung von \textbf{Kugelumlaufmuttern} führt zu einer Minimierung der Reibung und einer Erhöhung der Tragfähigkeit, was insbesondere bei mehrstöckigen Regalsystemen vorteilhaft ist. Die vertikale Führung erfolgt über ein stabiles Profil, das die Bewegung des Hubsystems stabilisiert und ein Verkanten verhindert.
+\\
+
+Die eigentliche \textbf{Einlagerung des Lagerguts} (x-Achse) erfolgt mittels eines \textbf{Druckluftzylinders}. Der Zylinder ist am Regalbediengerät montiert und fährt bei Erreichen der Zielposition aus, um das Lagergut in das vorgesehene Fach zu überführen. Die Wahl eines pneumatischen Systems ermöglicht eine schnelle und kraftvolle Bewegung, die unabhängig von der elektrischen Steuerung arbeitet und sich gut für wiederholte, gleichförmige Bewegungsabläufe eignet. Die Steuerung des Zylinders erfolgt durch ein \textbf{Magnetventil}, das durch die SPS angesteuert wird.
+
+\textbf{INSERT PICTURE}
+
+Die \textbf{Sensorik und Steuerungseinheiten} der Modell-Hochregalanlage übernehmen zentrale Aufgaben zur Gewährleistung eines sicheren und präzisen Betriebs. Sie ermöglichen sowohl die \textbf{Positionsbestimmung} der beweglichen Komponenten als auch die \textbf{Identifikation der Lagergüter} und die \textbf{Prozesssteuerung}.
+\\
+
+Zur Erfassung der Endstellungen der horizontalen und vertikalen Bewegungsachsen werden mechanische \textbf{Endschalter} verwendet. Diese sind jeweils an den Begrenzungspunkten der Lineareinheit sowie der Kugelumlaufspindel angebracht und dienen der sicheren Detektion der maximalen Verfahrwege. Das Erreichen einer Endlage löst den entsprechenden Schalter aus und führt zur Übertragung eines Signals an die Steuerungseinheit. Diese Vorgehensweise verhindert ein Überfahren der mechanischen Grenzen und gewährleistet den Schutz der Anlage vor potenziellen Schäden.
+\\
+
+Die \textbf{Materialerfassung} erfolgt mittels eines \textbf{RFID-Systems}, welches sich aus einer \textbf{RFID-Antenne} und entsprechenden \textbf{Transpondern} zusammensetzt. Jedes Element des Lagers ist mit einem \textbf{RFID-Tag} ausgestattet, der eine eindeutige Identifikation ermöglicht. Die Positionierung der Antenne erlaubt es, beim Ein- oder Auslagern eines Artikels dessen Transponder auszulesen. Die erfassten Daten werden unmittelbar an die Steuerung übermittelt und dort verarbeitet. Das berührungslose Identifikationsverfahren ermöglicht eine schnelle und fehlerfreie Zuordnung der Lagergüter.
+\\
+
+Die zentrale Steuerung der Anlage erfolgt mittels einer \textbf{SPS vom Typ Siemens S7-1511}, welche sämtliche Bewegungsabläufe, Sensorrückmeldungen und Aktorsteuerungen koordiniert. Die SPS ist über ein \textbf{HMI (Human-Machine Interface)} mit dem Bedienpersonal verbunden, wodurch eine intuitive Bedienung und Visualisierung der Anlagenzustände ermöglicht wird. Über das HMI können Betriebsmodi gewählt, Lagerprozesse gestartet und Diagnosedaten eingesehen werden.
