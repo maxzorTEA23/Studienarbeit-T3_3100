@@ -102,22 +102,8 @@ Zunächst erfolgt eine Beschreibung der wichtigsten Grundbausteine in FUP.
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=0.8\linewidth]{images/RS_FLIPFLOP}
-		\caption{\textbf{RS\_FLIPFLOP} \cite{Hering}}
-	\end{subfigure}
-	
-	\vspace{1cm}
-	
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
 		\includegraphics[width=0.8\linewidth]{images/TON}
 		\caption{\textbf{Einschaltverzögerung (TON)} \cite{Hering}}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{images/TOF}
-		\caption{\textbf{Ausschaltverzögerung (TOF)} \cite{Hering}}
 	\end{subfigure}
 	\caption{Darstellung wichtiger Funktionsbausteine in FUP}
 	\label{fig:funktionsbausteine_fup}
@@ -153,34 +139,25 @@ Wie bereits erwähnt, ermöglicht \textbf{FUP} eine einfache blockbasierte Progr
 \textbf{FUP} eignet sich besonders für einfache Anwendungen, wie beispielsweise die Ansteuerung von Drehstrommotoren. Auch für einfache Schrittketten ist \textbf{FUP} gut geeignet.\\
 Mit zunehmender Programmkomplexität leidet jedoch die Übersichtlichkeit, was zu einer erhöhten Fehleranfälligkeit führen kann.\\
 Um diese Probleme zu vermeiden, wird in großen Produktionsanlagen mit komplexen Abläufen überwiegend textbasiert, also in \textbf{SCL}, programmiert.
-\newpage
-Die folgenden Darstellungen vergleichen beide Sprachen und verdeutlichen ihre Unterschiede.\\
+Die folgenden Darstellungen vergleichen beide Sprachen und verdeutlichen ihre Unterschiede.
 Dargestellt ist eine einfache Förderbandsteuerung in \textbf{FUP} und \textbf{SCL} im TIA Portal.
 \begin{figure}[H]
 	\centering
-	\label{fig: Beispiel FUP}
-	\begin{subfigure}[b]{0.49\textwidth}
+	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.8\linewidth]{images/PrgBeispiel_FUP}
 		\caption{Funktionsbaustein zur Steuerung des Förderbands}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
+	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.8\linewidth]{images/PrgBeispiel_FUP_2}
 		\caption{Freigabe im Haupt-OB}
 	\end{subfigure}
-	
-	\vspace{0.5cm}
-	
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{images/PrgBeispiel_FUP_3}
-		\caption{Einbindung des FBs im Haupt-OB}
-	\end{subfigure}
 	\caption{Realisierung der Förderbandsteuerung in \textbf{FUP}}
+	\label{fig: Beispiel FUP}
 \end{figure}
-
+\newpage
 \begin{figure}[H]
 	\centering
 	% Erste Spalte – Förderband-Baustein
@@ -222,6 +199,6 @@ OU1    => "Q1_Band");
 	\label{fig:Foerderband_Listing}
 \end{figure}
 
-Anhand des Beispiels wird deutlich, dass \textbf{FUP} auf den ersten Blick leichter verständlich wirkt, da es sich um die grafische Verschaltung logischer Funktionen handelt.\\
+Anhand des Beispiels (\ref{fig: Beispiel FUP} \ref{fig:Foerderband_Listing}) wird deutlich, dass \textbf{FUP} auf den ersten Blick leichter verständlich wirkt, da es sich um die grafische Verschaltung logischer Funktionen handelt.\\
 Auf den zweiten Blick zeigt sich jedoch, dass der Programmieraufwand deutlich höher ist als in \textbf{SCL}. In \textbf{SCL} kann dieselbe Funktionalität mit wenigen, klar strukturierten Codezeilen realisiert werden, ohne das Programm mit zusätzlichen Netzwerken zu überladen.\\
 Zusammenfassend lässt sich festhalten, dass sowohl \textbf{FUP} als auch \textbf{SCL} ihre jeweiligen Vor- und Nachteile besitzen. Je nach Anwendung und Komplexität des Prozesses fällt die Entscheidung für die eine oder die andere Programmiersprache.

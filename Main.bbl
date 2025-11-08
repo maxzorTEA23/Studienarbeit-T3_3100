@@ -84,6 +84,33 @@
       \verb https://www.isa.org/intech-home/2016/may-june/features/io-link-field-device-protocol-architecture
       \endverb
     \endentry
+    \entry{Lichtschranke}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=60069e4b4982c77f415803b881591be5}{%
+           family={Baumann},
+           familyi={B\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Fachmedien Wiesbaden GmbH }%
+      }
+      \strng{namehash}{60069e4b4982c77f415803b881591be5}
+      \strng{fullhash}{60069e4b4982c77f415803b881591be5}
+      \strng{fullhashraw}{60069e4b4982c77f415803b881591be5}
+      \strng{bibnamehash}{60069e4b4982c77f415803b881591be5}
+      \strng{authorbibnamehash}{60069e4b4982c77f415803b881591be5}
+      \strng{authornamehash}{60069e4b4982c77f415803b881591be5}
+      \strng{authorfullhash}{60069e4b4982c77f415803b881591be5}
+      \strng{authorfullhashraw}{60069e4b4982c77f415803b881591be5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-658-35707-8}
+      \field{title}{{Ausgewählte Sensorschaltungen}}
+      \field{year}{2022}
+    \endentry
     \entry{IO_Link}{online}{}{}
       \name{author}{1}{}{%
         {{hash=69c1e95c652be0001b02c0219f2a1e5b}{%
@@ -147,6 +174,68 @@
       \verb https://www.drivecon.de/de/lexikon/feldbus
       \endverb
     \endentry
+    \entry{Lichtgatter_ifm_2}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a8055f6862d48178c0c5c1b8d55ba78d}{%
+           family={gmbh},
+           familyi={g\bibinitperiod},
+           prefix={ifm\bibnamedelima electronic},
+           prefixi={i\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{bibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorbibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authornamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \field{extraname}{1}
+      \field{sortinit}{g}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 06. November 2025}
+      \field{title}{Betriebsanleitung messendes Lichtgitter OY5100}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.ifm.com/de/de/product/OY5100#documents
+      \endverb
+      \verb{url}
+      \verb https://www.ifm.com/de/de/product/OY5100#documents
+      \endverb
+    \endentry
+    \entry{Lichtgatter_ifm}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a8055f6862d48178c0c5c1b8d55ba78d}{%
+           family={gmbh},
+           familyi={g\bibinitperiod},
+           prefix={ifm\bibnamedelima electronic},
+           prefixi={i\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{bibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorbibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authornamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \field{extraname}{2}
+      \field{sortinit}{g}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 06. November 2025}
+      \field{title}{Datenblatt messendes Lichtgitter OY5100}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.ifm.com/de/de/product/OY5100#documents
+      \endverb
+      \verb{url}
+      \verb https://www.ifm.com/de/de/product/OY5100#documents
+      \endverb
+    \endentry
     \entry{IFM_IO_Link_Master}{online}{}{}
       \name{author}{1}{}{%
         {{hash=a8055f6862d48178c0c5c1b8d55ba78d}{%
@@ -163,6 +252,7 @@
       \strng{authornamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
       \strng{authorfullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
       \strng{authorfullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \field{extraname}{3}
       \field{sortinit}{g}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
@@ -176,6 +266,33 @@
       \verb{url}
       \verb https://www.ifm.com/de/de/product/AL1100#documents
       \endverb
+    \endentry
+    \entry{funktionale_Sicherheit}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=7718fd28526782941146be364b0d1bfe}{%
+           family={Halang},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Viewing}%
+      }
+      \strng{namehash}{7718fd28526782941146be364b0d1bfe}
+      \strng{fullhash}{7718fd28526782941146be364b0d1bfe}
+      \strng{fullhashraw}{7718fd28526782941146be364b0d1bfe}
+      \strng{bibnamehash}{7718fd28526782941146be364b0d1bfe}
+      \strng{authorbibnamehash}{7718fd28526782941146be364b0d1bfe}
+      \strng{authornamehash}{7718fd28526782941146be364b0d1bfe}
+      \strng{authorfullhash}{7718fd28526782941146be364b0d1bfe}
+      \strng{authorfullhashraw}{7718fd28526782941146be364b0d1bfe}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-642-41309-4}
+      \field{title}{{funktionale Sicherheit - Echtzeit 2013}}
+      \field{year}{2013}
     \endentry
     \entry{Hering}{book}{}{}
       \name{author}{3}{}{%
