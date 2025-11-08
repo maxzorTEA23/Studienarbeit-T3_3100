@@ -1,0 +1,9 @@
+\subsection{Zielsetzung der Implementierung}
+Die Studienarbeiten der vergangenen Jahre haben das Hochregallager in einen Zustand gebracht, der wichtige Funktionen wie Ein- und Auslagern abbildet.\\
+Jedoch wurden hierbei, fälschlicherweise, die notwendigen Sicherheitsaspekte völlig außer Acht gelassen.\\
+In einer realen Umgebung, beispielsweise in Materiallagern mit Hochregalsystemen großer Industrieunternehmen, wäre eine solche Vorgehensweise undenkbar.\\
+Es muss jederzeit gewährleistet sein, dass Gefahren so gut wie möglich unter Kontrolle gehalten werden. Das bedeutet, im Fehlerfall muss jede gefährliche Bewegung sicher abgeschaltet werden.\\
+Dies stellt die zentrale Zielsetzung der Implementierung dar. In jedem Betriebsmodus muss sichergestellt sein, dass bei Erkennung einer Gefahr automatisch abgeschaltet wird.\\
+Dabei ist jedoch zu berücksichtigen, dass der Kolben des Zylinders, welcher die Materialien einlagert, kein Abschaltsignal auslösen darf. Dieser fährt nämlich unmittelbar in den Gatterbereich der Lichtschranke ein.\\
+Somit ist zunächst eine umfassende Analyse des Ist-Zustands sowie der verschiedenen Prozesswerte des Lichtgatters erforderlich.\\
+Erst im Anschluss kann die Implementierung der Sicherheitslogik erfolgen.
