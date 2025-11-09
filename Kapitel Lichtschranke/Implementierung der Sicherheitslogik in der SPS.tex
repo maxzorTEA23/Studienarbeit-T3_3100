@@ -1,0 +1,98 @@
+\subsection{Implementierung der Sicherheitslogik in der SPS}
+Die Sicherheitslogik wird, wie bereits erwähnt, in eine \textbf{Siemens S7-1500} SPS einprogrammiert. Die Programmierung erfolgt mithilfe der Software \textbf{TIA Portal}.\\
+Für die Umsetzung der Arbeit wurde das bestehende Programm des Jahrgangs \textbf{TEA 22} als Grundlage verwendet. Zunächst wurde eine neue \textit{Program Organization Unit (POU)} mit der Bezeichnung \textbf{Lichtschranke} erstellt.\\
+Im Anschluss erfolgte das Einbinden des Moduls \textbf{OY5100} im Reiter \textbf{Geräte und Netzwerke}. Der Adressbereich \textit{(frei wählbar)} wurde so konfiguriert, dass eine eindeutige Zuordnung innerhalb des Projekts gewährleistet ist.\\[0.2cm]
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{images/OY5100_Einbindung} % Beispielabbildung
+	\caption{Einbindung der IFM-Lichtschranke OY5100 im TIA Portal}
+	\label{fig:tia_device_network}
+\end{figure}
+
+Die zugewiesenen Adressen werden für die verschiedenen Prozesswerte genutzt (siehe Kapitel~\ref{cha: Prozesswerte}).\\
+Als Vorbereitung auf die Programmierung wurde eine sogenannte \textit{Watchtable} erstellt. Diese dient dazu, die einzelnen Prozesswerte des Lichtgatters während der Laufzeit zu überwachen und deren Verhalten zu analysieren.\\
+Die Prozesswerte liegen im Format \textbf{WORD} (2 Byte) vor und bilden die Anzahl der unterbrochenen Lichtstrahlen ab.\\[0.2cm]
+
+Nach einer Reihe von Tests wurde festgestellt, dass der Kolben des Zylinders im Arbeitsbereich des Lichtgatters \textbf{drei Strahlen} gleichzeitig unterbricht. Hierfür erfolgte ein gezieltes Verfahren der Lineareinheit über alle vier Ebenen des Hochregallagers. So konnte überprüft werden, dass der Kolben in jeder Position konstant drei Strahlen abdeckt.\\[0.2cm]
+
+Im weiteren Verlauf wurde diskutiert, welcher Prozesswert sich für die Sicherheitslogik am besten eignet. Es zeigte sich, dass der Modus \textbf{NBO (Number of Beams Occupied)} die Summe aller unterbrochenen Lichtstrahlen angibt (siehe Kapitel~\ref{cha: Prozesswerte}). Daher ist dieser Prozesswert optimal geeignet, um eine zuverlässige Abschaltung über das Lichtgatter zu realisieren.\\
+Nach der Diskussion wurde, für die Realisierung der Abfrage, ein neuer FB (Freigabe\_Lichtschranke\_FB24) aufgebaut in \textbf{SCL}. Im Diagramm \ref{fig:fb24_einbindung} ist der Zusammenhang zwischen den einzelnen Modi und der \textbf{Freigabe} dargestellt.
+\begin{figure}[H]
+	\hspace*{3cm}
+	\begin{tikzpicture}[
+		node distance=4cm and 4cm,
+		>=latex,
+		font=\small,
+		every node/.style={align=center}
+		]
+		
+		% Zentrale Freigabe
+		\node (fb24) [draw, circle, fill=blue!10, minimum width=2.8cm, align=center, thick] 
+		{FB24\\Freigabe\\Lichtschranke};
+		
+		% Außenliegende FBS
+		\node (fbhand) [draw, rectangle, fill=green!10, above=of fb24, minimum width=3.8cm, minimum height=1cm, thick]
+		{FB\\Handbetrieb};
+		\node (fbprozess) [draw, rectangle, fill=orange!10, right=of fb24, minimum width=4.3cm, minimum height=1cm, thick]
+		{FB\\Prozesssteuerung\\(Ein-/Auslagerung)};
+		\node (fbstoer) [draw, rectangle, fill=red!10, below=of fb24, minimum width=3.8cm, minimum height=1cm, thick]
+		{FB\\Störungen};
+		
+		% Verbindungspfeile
+		\draw[<->, thick] (fbhand.south) -- (fb24.north) node[midway, right]{Signalaustausch};
+		\draw[<->, thick] (fbprozess.west) -- (fb24.east) node[midway, above]{Status / Freigabe};
+		\draw[<->, thick] (fbstoer.north) -- (fb24.south) node[midway, right]{Rückmeldung / Fehler};
+		
+	\end{tikzpicture}
+	\caption{Einbindung des Bausteins \texttt{FB24 – Freigabe\_Lichtschranke} in das Gesamtsystem}
+	\label{fig:fb24_einbindung}
+\end{figure}
+Der Baustein \texttt{FB24 – Freigabe\_Lichtschranke} ist ein zentraler Bestandteil der Sicherheitsarchitektur.\\
+Ohne ihn wäre ein sicheres Abschalten im Fehlerfall nicht möglich. Die \textbf{Prozesssteuerung} wird durch die Freigabe in jedem Schritt überwacht.\\
+Durch die Einbindung in den \texttt{FB11 – Störungen} erfolgt eine Überwachung sämtlicher Ausgänge über die Variable \texttt{b\_Freigabe}. Diese wird gesetzt, sobald keine Störungen aktiv sind und die Freigabe durch das Lichtgitter gegeben ist.\\[0.2cm]
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/b_Freigabe}
+	\caption{Setzen der Variable \texttt{b\_Freigabe} in \texttt{FB11 – Störungen}}
+	\label{b_Freigabe}
+\end{figure}
+Jene Variable in Abbildung \ref{b_Freigabe} wurde bereits in vorherigen Projekten verwendet.\\
+Sie wird im Block \texttt{FB\_Ausgänge} eingesetzt, als zusätzliche invertierte Rücksetzbedingung. Somit ist ein fehlerfreier Betriebsmodus der einzelnen Aktoren gewährleistet.
+\subsubsection{Logische Abschaltbedingung der Lichtschranke}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[
+		node distance=1.8cm,
+		>=latex,
+		font=\small,
+		every node/.style={align=center},
+		process/.style={draw, rectangle, rounded corners, fill=blue!10, minimum width=4cm, minimum height=1cm},
+		decision/.style={draw, diamond, aspect=2, fill=orange!10, text width=3.8cm, align=center, inner sep=1pt},
+		startstop/.style={draw, ellipse, fill=gray!15, minimum width=3cm, minimum height=1cm}
+		]
+		
+		% Nodes
+		\node (start) [startstop] {Start / Normalbetrieb};
+		\node (read) [process, below=of start] {Prozesswert\\\texttt{NBO} auslesen};
+		\node (decision) [decision, below=of read] {Ist \texttt{NBO > 3}?\\(3 = Zylinderhöhe)};
+		\node (ok) [process, below left=1.5cm and 2.5cm of decision, fill=green!10] {Freigabe aktiv\\\texttt{b\_Freigabe = TRUE}};
+		\node (stop) [process, below right=1.5cm and 2.5cm of decision, fill=red!10] {Aktorik abschalten\\\texttt{b\_Freigabe = FALSE}};
+		\node (end) [startstop, below=of ok] {Zyklus fortsetzen};
+		
+		% Connections
+		\draw[->, thick] (start) -- (read);
+		\draw[->, thick] (read) -- (decision);
+		\draw[->, thick] (decision) -- node[midway, left]{Nein} (ok);
+		\draw[->, thick] (decision) -- node[midway, right]{Ja} (stop);
+		\draw[->, thick] (ok) -- (end);
+		
+		
+	\end{tikzpicture}
+	\caption{Abschaltlogik der Lichtschranke basierend auf dem Prozesswert \texttt{NBO}}
+	\label{fig:abschaltlogik_nbo}
+\end{figure}
+In Abbildung~\ref{fig:abschaltlogik_nbo} ist der Ablauf der Sicherheitsabschaltung grafisch dargestellt.
+Sobald der Prozesswert \textbf{NBO} größer als 3 ist, wird die Aktorik abgeschaltet.
+Das bedeutet, dass eine sofortige Abschaltung erfolgt, sobald zusätzlich zum Zylinder eine Hand oder ein anderes Objekt detektiert wird – also ein weiterer Lichtstrahl unterbrochen ist.
