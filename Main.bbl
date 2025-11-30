@@ -111,6 +111,33 @@
       \field{title}{{Ausgewählte Sensorschaltungen}}
       \field{year}{2022}
     \endentry
+    \entry{Bernstein.2016}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=1759af5b71da6cc1d068341514706257}{%
+           family={Bernstein},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag GmbH Deutschland}%
+      }
+      \strng{namehash}{1759af5b71da6cc1d068341514706257}
+      \strng{fullhash}{1759af5b71da6cc1d068341514706257}
+      \strng{fullhashraw}{1759af5b71da6cc1d068341514706257}
+      \strng{bibnamehash}{1759af5b71da6cc1d068341514706257}
+      \strng{authorbibnamehash}{1759af5b71da6cc1d068341514706257}
+      \strng{authornamehash}{1759af5b71da6cc1d068341514706257}
+      \strng{authorfullhash}{1759af5b71da6cc1d068341514706257}
+      \strng{authorfullhashraw}{1759af5b71da6cc1d068341514706257}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-658-12934-7}
+      \field{title}{{Sicherheits- und Antriebstechnik}}
+      \field{year}{2016}
+    \endentry
     \entry{IO_Link}{online}{}{}
       \name{author}{1}{}{%
         {{hash=69c1e95c652be0001b02c0219f2a1e5b}{%
