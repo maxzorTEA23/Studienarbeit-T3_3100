@@ -1,0 +1,541 @@
+<<<<<<< HEAD
+=======
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{IEC6113-3_2022}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=170e29a9b7cb0db1a5c691716e172d3d}{%
+           family={Adam},
+           familyi={A\bibinitperiod},
+           given={H.\bibnamedelimi J.},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=57270f5a4e421d85198f551545228495}{%
+           family={Adam},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{a4bde228ed03b389ed7230168d9b3dbc}
+      \strng{fullhash}{a4bde228ed03b389ed7230168d9b3dbc}
+      \strng{fullhashraw}{a4bde228ed03b389ed7230168d9b3dbc}
+      \strng{bibnamehash}{a4bde228ed03b389ed7230168d9b3dbc}
+      \strng{authorbibnamehash}{a4bde228ed03b389ed7230168d9b3dbc}
+      \strng{authornamehash}{a4bde228ed03b389ed7230168d9b3dbc}
+      \strng{authorfullhash}{a4bde228ed03b389ed7230168d9b3dbc}
+      \strng{authorfullhashraw}{a4bde228ed03b389ed7230168d9b3dbc}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-662-65254-1}
+      \field{title}{{PLC Programming In Instruction List According To IEC 61131-3}}
+      \field{year}{2022}
+    \endentry
+    \entry{isa_iolink_architecture_2016}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e09f2211be542d676ccc73eed55cfff1}{%
+           family={Automation},
+           familyi={A\bibinitperiod},
+           given={International\bibnamedelima Society},
+           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{fullhash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{fullhashraw}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{bibnamehash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{authorbibnamehash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{authornamehash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{authorfullhash}{e09f2211be542d676ccc73eed55cfff1}
+      \strng{authorfullhashraw}{e09f2211be542d676ccc73eed55cfff1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{InTech Magazine}
+      \field{note}{Zugriff am 25. Oktober 2025}
+      \field{title}{IO-Link Field Device Protocol Architecture}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.isa.org/intech-home/2016/may-june/features/io-link-field-device-protocol-architecture
+      \endverb
+      \verb{url}
+      \verb https://www.isa.org/intech-home/2016/may-june/features/io-link-field-device-protocol-architecture
+      \endverb
+    \endentry
+    \entry{Lichtschranke}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=60069e4b4982c77f415803b881591be5}{%
+           family={Baumann},
+           familyi={B\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Fachmedien Wiesbaden GmbH }%
+      }
+      \strng{namehash}{60069e4b4982c77f415803b881591be5}
+      \strng{fullhash}{60069e4b4982c77f415803b881591be5}
+      \strng{fullhashraw}{60069e4b4982c77f415803b881591be5}
+      \strng{bibnamehash}{60069e4b4982c77f415803b881591be5}
+      \strng{authorbibnamehash}{60069e4b4982c77f415803b881591be5}
+      \strng{authornamehash}{60069e4b4982c77f415803b881591be5}
+      \strng{authorfullhash}{60069e4b4982c77f415803b881591be5}
+      \strng{authorfullhashraw}{60069e4b4982c77f415803b881591be5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-658-35707-8}
+      \field{title}{{Ausgewählte Sensorschaltungen}}
+      \field{year}{2022}
+    \endentry
+    \entry{Bernstein.2016}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=1759af5b71da6cc1d068341514706257}{%
+           family={Bernstein},
+           familyi={B\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag GmbH Deutschland}%
+      }
+      \strng{namehash}{1759af5b71da6cc1d068341514706257}
+      \strng{fullhash}{1759af5b71da6cc1d068341514706257}
+      \strng{fullhashraw}{1759af5b71da6cc1d068341514706257}
+      \strng{bibnamehash}{1759af5b71da6cc1d068341514706257}
+      \strng{authorbibnamehash}{1759af5b71da6cc1d068341514706257}
+      \strng{authornamehash}{1759af5b71da6cc1d068341514706257}
+      \strng{authorfullhash}{1759af5b71da6cc1d068341514706257}
+      \strng{authorfullhashraw}{1759af5b71da6cc1d068341514706257}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-658-12934-7}
+      \field{title}{{Sicherheits- und Antriebstechnik}}
+      \field{year}{2016}
+    \endentry
+    \entry{IO_Link}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=69c1e95c652be0001b02c0219f2a1e5b}{%
+           family={e.V.},
+           familyi={e\bibinitperiod},
+           given={PROFIBUS\bibnamedelima Nutzerorganisation},
+           giveni={P\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IO-Link}%
+      }
+      \strng{namehash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{fullhash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{fullhashraw}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{bibnamehash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{authorbibnamehash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{authornamehash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{authorfullhash}{69c1e95c652be0001b02c0219f2a1e5b}
+      \strng{authorfullhashraw}{69c1e95c652be0001b02c0219f2a1e5b}
+      \field{sortinit}{e}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 02. November 2025}
+      \field{title}{IO-Link Systembeschreibung}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.io-link.com
+      \endverb
+      \verb{url}
+      \verb https://www.io-link.com
+      \endverb
+    \endentry
+    \entry{Bustopologien}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=28d90a5cfa73414547b9efb2a0df83af}{%
+           family={GmbH},
+           familyi={G\bibinitperiod},
+           given={DriveCon},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{fullhash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{fullhashraw}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{bibnamehash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{authorbibnamehash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{authornamehash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{authorfullhash}{28d90a5cfa73414547b9efb2a0df83af}
+      \strng{authorfullhashraw}{28d90a5cfa73414547b9efb2a0df83af}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 02. November 2025}
+      \field{title}{FeldBustopologien}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.drivecon.de/de/lexikon/feldbus
+      \endverb
+      \verb{url}
+      \verb https://www.drivecon.de/de/lexikon/feldbus
+      \endverb
+    \endentry
+    \entry{Lichtgatter_ifm_2}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a8055f6862d48178c0c5c1b8d55ba78d}{%
+           family={gmbh},
+           familyi={g\bibinitperiod},
+           prefix={ifm\bibnamedelima electronic},
+           prefixi={i\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{bibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorbibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authornamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \field{extraname}{1}
+      \field{sortinit}{g}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 06. November 2025}
+      \field{title}{Betriebsanleitung messendes Lichtgitter OY5100}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.ifm.com/de/de/product/OY5100#documents
+      \endverb
+      \verb{url}
+      \verb https://www.ifm.com/de/de/product/OY5100#documents
+      \endverb
+    \endentry
+    \entry{Lichtgatter_ifm}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a8055f6862d48178c0c5c1b8d55ba78d}{%
+           family={gmbh},
+           familyi={g\bibinitperiod},
+           prefix={ifm\bibnamedelima electronic},
+           prefixi={i\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{bibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorbibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authornamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \field{extraname}{2}
+      \field{sortinit}{g}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 06. November 2025}
+      \field{title}{Datenblatt messendes Lichtgitter OY5100}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.ifm.com/de/de/product/OY5100#documents
+      \endverb
+      \verb{url}
+      \verb https://www.ifm.com/de/de/product/OY5100#documents
+      \endverb
+    \endentry
+    \entry{IFM_IO_Link_Master}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a8055f6862d48178c0c5c1b8d55ba78d}{%
+           family={gmbh},
+           familyi={g\bibinitperiod},
+           prefix={ifm\bibnamedelima electronic},
+           prefixi={i\bibinitperiod\bibinitdelim e\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{fullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{bibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorbibnamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authornamehash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhash}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \strng{authorfullhashraw}{a8055f6862d48178c0c5c1b8d55ba78d}
+      \field{extraname}{3}
+      \field{sortinit}{g}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 02. November 2025}
+      \field{title}{IO-Link Master mit PROFINET-Schnittstelle AL1100}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.ifm.com/de/de/product/AL1100#documents
+      \endverb
+      \verb{url}
+      \verb https://www.ifm.com/de/de/product/AL1100#documents
+      \endverb
+    \endentry
+    \entry{funktionale_Sicherheit}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=7718fd28526782941146be364b0d1bfe}{%
+           family={Halang},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Viewing}%
+      }
+      \strng{namehash}{7718fd28526782941146be364b0d1bfe}
+      \strng{fullhash}{7718fd28526782941146be364b0d1bfe}
+      \strng{fullhashraw}{7718fd28526782941146be364b0d1bfe}
+      \strng{bibnamehash}{7718fd28526782941146be364b0d1bfe}
+      \strng{authorbibnamehash}{7718fd28526782941146be364b0d1bfe}
+      \strng{authornamehash}{7718fd28526782941146be364b0d1bfe}
+      \strng{authorfullhash}{7718fd28526782941146be364b0d1bfe}
+      \strng{authorfullhashraw}{7718fd28526782941146be364b0d1bfe}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-642-41309-4}
+      \field{title}{{funktionale Sicherheit - Echtzeit 2013}}
+      \field{year}{2013}
+    \endentry
+    \entry{Hering}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=09c4544dd982ebdee6febd418b7901e1}{%
+           family={Hering},
+           familyi={H\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=6e8f2244731a08913aa4fa756d5e350b}{%
+           family={Endres},
+           familyi={E\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f07fc8e7741eea6e3b1cbb3701e367e0}{%
+           family={Gutekunst},
+           familyi={G\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag GmbH Deutschland}%
+      }
+      \strng{namehash}{29eab1300ad27ddc5a3b683058dc0eae}
+      \strng{fullhash}{29eab1300ad27ddc5a3b683058dc0eae}
+      \strng{fullhashraw}{29eab1300ad27ddc5a3b683058dc0eae}
+      \strng{bibnamehash}{29eab1300ad27ddc5a3b683058dc0eae}
+      \strng{authorbibnamehash}{29eab1300ad27ddc5a3b683058dc0eae}
+      \strng{authornamehash}{29eab1300ad27ddc5a3b683058dc0eae}
+      \strng{authorfullhash}{29eab1300ad27ddc5a3b683058dc0eae}
+      \strng{authorfullhashraw}{29eab1300ad27ddc5a3b683058dc0eae}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-662-62698-6}
+      \field{title}{{Elektronik für Ingenieure und Naturwissenschaftler}}
+      \field{year}{2021}
+    \endentry
+    \entry{Kanngießer}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=3240ab2551452f2fb1a9301466e4978c}{%
+           family={Kanngießer},
+           familyi={K\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {VDE Verlag GmbH}%
+      }
+      \strng{namehash}{3240ab2551452f2fb1a9301466e4978c}
+      \strng{fullhash}{3240ab2551452f2fb1a9301466e4978c}
+      \strng{fullhashraw}{3240ab2551452f2fb1a9301466e4978c}
+      \strng{bibnamehash}{3240ab2551452f2fb1a9301466e4978c}
+      \strng{authorbibnamehash}{3240ab2551452f2fb1a9301466e4978c}
+      \strng{authornamehash}{3240ab2551452f2fb1a9301466e4978c}
+      \strng{authorfullhash}{3240ab2551452f2fb1a9301466e4978c}
+      \strng{authorfullhashraw}{3240ab2551452f2fb1a9301466e4978c}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-800-74409-1}
+      \field{title}{{Programmierung mit Strukturierter Text: Steuerungs-Funktionsbausteine mit ST oder SCL einfach und schnell erstellen. Für Ein- und AWL-Umsteiger - Softcover}}
+      \field{year}{2017}
+    \endentry
+    \entry{Langmann.2021}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=cdb383916029b1af50538ecbc534b9e1}{%
+           family={Langmann},
+           familyi={L\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Carl Hanser Verlag München}%
+      }
+      \strng{namehash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{fullhash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{fullhashraw}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{bibnamehash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{authorbibnamehash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{authornamehash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{authorfullhash}{cdb383916029b1af50538ecbc534b9e1}
+      \strng{authorfullhashraw}{cdb383916029b1af50538ecbc534b9e1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1. Auflage}
+      \field{isbn}{978-3-446-46984-6}
+      \field{title}{Vernetzte Systeme für die Automatisierung 4.0}
+      \field{year}{2021}
+    \endentry
+    \entry{Schnell.2019}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=d1f007169abbe760b23cd50b12798454}{%
+           family={Schnell},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=298ce9252801c0cf1935f5e9d0c62469}{%
+           family={Wiedemann},
+           familyi={W\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag GmbH Deutschland}%
+      }
+      \strng{namehash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{fullhash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{fullhashraw}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{bibnamehash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{authorbibnamehash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{authornamehash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{authorfullhash}{ec73d41378e039b4d8301d9d1d21ee65}
+      \strng{authorfullhashraw}{ec73d41378e039b4d8301d9d1d21ee65}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{9. Auflage}
+      \field{isbn}{978-3-658-23688-5}
+      \field{title}{{Bussysteme in der Automatisierungs- und Prozesstechnik}}
+      \field{year}{2019}
+    \endentry
+    \entry{Seitz.2021}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa4e6ecd90ce158ddcf5ec3eb57fd4d5}{%
+           family={Seitz},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Carl Hanser Verlag München}%
+      }
+      \strng{namehash}{aa4e6ecd90ce158ddcf5ec3eb57fd4d5}
+      \strng{fullhash}{aa4e6ecd90ce158ddcf5ec3eb57fd4d5}
+      \strng{fullhashraw}{aa4e6ecd90ce158ddcf5ec3eb57fd4d5}
+      \strng{bibnamehash}{aa4e6ecd90ce158ddcf5ec3eb57fd4d5}
+      \strng{authorbibnamehash}{aa4e6ecd90ce158ddcf5ec3eb57fd4d5}
+      \strng{authornamehash}{aa4e6ecd90ce158ddcf5ec3eb57fd4d5}
+      \strng{authorfullhash}{aa4e6ecd90ce158ddcf5ec3eb57fd4d5}
+      \strng{authorfullhashraw}{aa4e6ecd90ce158ddcf5ec3eb57fd4d5}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{5. Auflage}
+      \field{isbn}{978-3-446-47002-6}
+      \field{title}{{Speicherprogrammierbare Steuerungen in der Industrie 4.0}}
+      \field{year}{2021}
+    \endentry
+    \entry{siemens_programmieren}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=bb85ee2f18e5585401e17ed32ff948f6}{%
+           family={{Siemens AG}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{bibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorbibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authornamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 27. Oktober 2025}
+      \field{title}{PLC Programmieren}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://support.industry.siemens.com/cs/mdm/109747174?c=98343050763&lc=de-DE
+      \endverb
+      \verb{url}
+      \verb https://support.industry.siemens.com/cs/mdm/109747174?c=98343050763&lc=de-DE
+      \endverb
+    \endentry
+    \entry{siemens_vars2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=bb85ee2f18e5585401e17ed32ff948f6}{%
+           family={{Siemens AG}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{fullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{bibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorbibnamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authornamehash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhash}{bb85ee2f18e5585401e17ed32ff948f6}
+      \strng{authorfullhashraw}{bb85ee2f18e5585401e17ed32ff948f6}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Zugriff am 30. Juni 2025}
+      \field{title}{Beispiel einer Variablentabelle im TIA Portal}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://support.industry.siemens.com/cs/document/37855612/warum-wird-in-der-plc-variablentabelle-der-name-einer-variablen-(z-b-on-)-mit-einer-nummer-erweitert-(z-b-on_1-)-?dti=0&lc=de-DE
+      \endverb
+      \verb{url}
+      \verb https://support.industry.siemens.com/cs/document/37855612/warum-wird-in-der-plc-variablentabelle-der-name-einer-variablen-(z-b-on-)-mit-einer-nummer-erweitert-(z-b-on_1-)-?dti=0&lc=de-DE
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
+>>>>>>> b34088b6625e5fc12829d0ea012259090b5e4f0b
