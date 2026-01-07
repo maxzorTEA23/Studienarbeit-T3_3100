@@ -1,0 +1,43 @@
+\subsubsection{Speicherprogrammierbare Steuerungen}
+Die \textbf{Speicherprogrammierbare Steuerung} (SPS) stellt ein zentrales Element moderner industrieller Automatisierung dar. Sie ermöglicht die flexible, softwarebasierte Steuerung technischer Prozesse und ersetzt zunehmend klassische \textbf{verbindungsprogrammierte Steuerungen} wie Relais- und Schütztechnik. Insbesondere die SPS-Systeme der Siemens AG, unter dem Markennamen SIMATIC bekannt, nehmen eine führende Rolle in der industriellen Praxis ein.
+\\
+Im folgenden eine Gegenüberstellung von VPS und SPS:
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|p{4cm}|p{5.5cm}|p{5.5cm}|}
+		\hline
+		\textbf{Kriterium} & \textbf{SPS (Speicherprogrammierbare Steuerung)} & \textbf{VPS (Verbindungsprogrammierte Steuerung)} \\ \hline
+		\textbf{Flexibilität} & Hohe Flexibilität durch einfache Softwareänderung & Geringe Flexibilität, Änderungen erfordern Hardwareeingriffe \\ \hline
+		\textbf{Programmierung} & Softwarebasiert über Programmiersprachen (z.\,B. KOP, FUP, SCL) & Hardwarebasiert durch Verdrahtung von Relais und Schützen \\ \hline
+		\textbf{Fehlersuche} & Komfortable Diagnosefunktionen über Softwaretools & Fehlersuche oft manuell und zeitaufwendig \\ \hline
+		\textbf{Platzbedarf} & Kompakte Bauweise, platzsparend & Großer Platzbedarf durch viele Einzelkomponenten \\ \hline
+		\textbf{Kosten bei Änderungen} & Geringe Kosten, da keine Hardwareänderung nötig & Hohe Kosten durch Umbau und neue Komponenten \\ \hline
+		\textbf{Wartung} & Zentralisiert und softwaregestützt & Dezentral und hardwareintensiv \\ \hline
+		\textbf{Komplexität der Steuerung} & Geeignet für komplexe und vernetzte Systeme & Nur für einfache Steuerungsaufgaben geeignet \\ \hline
+		\textbf{Zukunftsfähigkeit} & Industrie 4.0-fähig, IoT-Integration möglich & Veraltet, kaum kompatibel mit modernen Systemen \\ \hline
+	\end{tabular}
+	\caption{Vergleich zwischen SPS und VPS hinsichtlich technischer und wirtschaftlicher Kriterien; Quelle: \cite{SPSvsVPS}}
+	\label{tab:sps_vs_vps}
+\end{table}
+
+Die SIMATIC-Reihe von Siemens ist in zwei Produktlinien gegliedert, welche sich hauptsächlich in ihren Anwendungsbereichen unterscheiden. Die S7-1200 ist für die Realisierung kompakter Automatisierungslösungen konzipiert, wohingegen die S7-1500 erweiterte Funktionen für die Bewältigung komplexer Steuerungsaufgaben in vernetzten Produktionsumgebungen bietet. Die Funktionsweise beider Systeme ist durch das EVA-Prinzip (Eingabe – Verarbeitung – Ausgabe) determiniert. Die Bereitstellung der Eingangssignale erfolgt durch Sensoren, deren Signale durch die CPU verarbeitet und anschließend durch Aktoren umgesetzt werden.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/eva-prinzip}
+	\caption{EVA-Prinzip; Quelle \cite{EVA-Prinzip}}
+	\label{EVA-Prinzip}
+\end{figure}
+
+Die Programmierung und Konfiguration der Siemens-SPS erfolgt über das \textbf{Totally Integrated Automation Portal} (TIA Portal), eine integrierte Entwicklungsumgebung, die verschiedene Automatisierungskomponenten wie SPS, HMI und Antriebstechnik vereint. Das TIA Portal unterstützt die Programmiersprachen gemäß \textbf{IEC 61131-3}, darunter \textbf{Kontaktplan} (KOP), \textbf{Funktionsplan} (FUP), \textbf{Anweisungsliste} (AWL) und \textbf{Structured Control Language} (SCL). Diese Vielfalt ermöglicht eine anwendungsorientierte und normgerechte Entwicklung von Steuerungsprogrammen.\cite{IEC61131-3}
+\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/S7-1500}
+	\caption{Beispiel S7-1500; Quelle \cite{S7-1500}}
+	\label{S7-1500}
+\end{figure}
+
+Ein wesentliches Merkmal der \textbf{Siemens-SPS-Systeme} ist ihre Kompatibilität mit modernen Kommunikationsstandards wie \textbf{PROFINE}T und \textbf{PROFIBUS}. Dadurch wird eine nahtlose Integration in industrielle Netzwerke gewährleistet. Im Kontext von \textbf{Industrie 4.0} kommt den Siemens-SPS eine Schlüsselrolle zu, da sie die Grundlage für intelligente, vernetzte und adaptive Produktionssysteme bilden. Die Fähigkeit zur \textbf{Echtzeit-Datenerfassung und -verarbeitung} sowie zur Anbindung an Cloud- und \textbf{IoT-Plattformen} macht sie zu einem integralen Bestandteil digitalisierter Fertigungsprozesse.\cite{WellenreutherSPS}
+
