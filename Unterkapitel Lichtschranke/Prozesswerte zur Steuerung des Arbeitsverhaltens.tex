@@ -1,0 +1,35 @@
+\subsubsection{Prozesswerte zur Steuerung des Arbeitsverhaltens}
+\label{cha: Prozesswerte}
+Zur Steuerung des Verhaltens bei einer Unterbrechung stehen verschiedene Prozesswerte zur Verfügung\cite{Lichtgatter_ifm_2}:
+\begin{itemize}
+	\item \textbf{FBO (First Beam Occupied)}
+	\item \textbf{LBO (Last Beam Occupied)}
+	\item \textbf{CBO (Central Beam Occupied)}
+	\item \textbf{NBO (Number of Beams Occupied)}
+	\item \textbf{NCBO (Number of Consecutive Beams Occupied)}
+\end{itemize}
+
+Im Betriebsmodus \textbf{FBO} schaltet der Sensor bereits beim ersten unterbrochenen Lichtstrahl. Das bedeutet, Objekte, die im unteren Bereich des Lichtgatters liegen, werden als erstes erfasst.\\
+Im Modus \textbf{LBO} geschieht genau das Gegenteil: Es wird beim letzten Lichtstrahl geschaltet.\\
+Dieser Modus wird beispielsweise bei Endlagenerkennungen oder beim Auslagern verwendet – also immer dann, wenn das Austreten aus einem bestimmten Bereich überwacht werden soll.\\
+
+Der Modus \textbf{CBO} ist etwas komplexer:
+Hier wird der mittlere Lichtstrahl (bei mehreren zusammenhängenden Strahlen) überwacht. Tritt ein Objekt in das Lichtgatter ein, wird der zentrale Strahl als Referenzpunkt betrachtet. Bei mehreren Objekten wird immer vom größeren Objekt ausgegangen, also von dem, das mehr Strahlen gleichzeitig unterbricht – wie in Abbildung \ref{CBO_Modus} zu sehen.\\
+Anwendungsbeispiele sind z. B. Durchgänge oder Förderabschnitte, also überall dort, wo Objekte mittig erfasst werden sollen (Referenzpunkt: Mitte).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/CBO_Modus}
+	\caption{Modus \textbf{CBO}; Quelle: \cite{Lichtgatter_ifm_2}}
+	\label{CBO_Modus}
+\end{figure}
+
+Die letzten beiden Modi, \textbf{NBO} und \textbf{NCBO}, beschäftigen sich mit der konkreten Anzahl der Lichtstrahlen, die unterbrochen werden.\\
+Der Unterschied der beiden Modi liegt darin, dass \textbf{NBO} die Gesamtanzahl der unterbrochenen Lichtstrahlen angibt, während \textbf{NCBO} die Anzahl der Strahlen beschreibt, die \textit{aufeinanderfolgend} unterbrochen werden.\\
+Im Projekt wird der Modus \textbf{NBO} verwendet. Eine Abbildung soll die Funktionsweise noch einmal verdeutlichen (siehe Abbildung \ref{NBO_Modus}).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{images/NBO_Modus}
+	\caption{Funktionsweise des \textbf{NBO-Modus}; Quelle: \cite{Lichtgatter_ifm_2}}
+	\label{NBO_Modus}
+\end{figure}

@@ -40,6 +40,7 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
 \lstset{
 	basicstyle=\ttfamily\small,
 	keywordstyle=\color{blue},
@@ -67,6 +68,7 @@
 %\counterwithin{table}{section}
 %Kapitel + Abschnitt in Markierungen übernehmen
 \begin{document}
+	\onehalfspacing
 	\pagenumbering{gobble}
 	\begin{titlepage}
 		\enlargethispage{4.0cm}
@@ -131,6 +133,9 @@
 \setcounter{page}{1}
 \input{Kapitel Einleitung/Einleitung.tex}
 \input{Kapitel Grundlagen/Grundlagen.tex}
+\input{Kapitel Lichtschranke/Lichtschranke.tex}
+\clearpage
+\input{Kapitel Umlagerung/Umlagerung.tex}
 
 \newpage
 \printbibliography

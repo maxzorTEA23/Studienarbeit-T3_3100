@@ -1,0 +1,31 @@
+
+\subsection{Visualisierung auf dem HMI}
+Die Visualisierung des Umlagerungsprozesses wurde im bestehenden Stil des bisherigen HMI-Layouts umgesetzt, um eine konsistente Benutzerführung und ein einheitliches Erscheinungsbild zu gewährleisten. Sämtliche grafischen Elemente, Farbschemata und Bedienelemente orientieren sich an der zuvor implementierten Struktur für Ein- und Auslagerungsprozesse. Ergänzend wurde das HMI um spezifische Funktionen für die Umlagerung erweitert. Dazu zählen die Anzeige des aktuellen Quell- und Zielplatzes, die Positionsmeldungen während der Verfahrbewegungen sowie die Möglichkeit zur direkten Auswahl der Umlagerungsposition im Menü Übersicht.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Screenshots/Umlagerung/HMI/Übersicht.png}
+	\caption{Übersichtsdarstellung zur Auswahl des Umlagerplatzes im HMI}
+	\label{fig:hmi_uebersicht}
+\end{figure}
+
+Oben abgebildet ist die Übersicht des Hochregallagers mit den einzelnen Lagerplätzen, die in einer vertikalen Anordnung dargestellt sind. Die Platznummern (z.\,B. 11, 21, 31, 41) setzen sich aus den X- und Y-Koordinaten zusammen , um eine schnelle Orientierung zu gewährleisten. Im Zentrum befindet sich ein Popup-Bereich für die Auswahl des Umlagerplatzes. Das Pop-Up wird geöffnet, sobald der Bediener der Anlage einen Lagerplatz anklickt und ihn  dadurch auswählt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Screenshots/Umlagerung/HMI/POP_UP.png}
+	\caption{Popup-Fenster zur Anzeige von Produktinformationen und Eingabe des neuen Lagerplatzes}
+	\label{fig:hmi_popup}
+\end{figure}
+
+Das Bild zeigt das Popup-Fenster, das zur Anzeige detaillierter Produktinformationen sowie zum Start des neuen Umlagerprozesses dient. Auf der linken Seite werden Statusinformationen des ausgewählten Lagerplatzes dargestellt, darunter der aktuelle Status, die Artikelnummer, das Material, die eindeutige Identifikationsnummer (UID) sowie ein Zeitstempel. Die rechte Seite des Fensters zeigt den zuvor in der Übersicht ausgewählten Koordinaten für die neue Zielposition (X- und Y-Koordinaten) sowie eine Schaltfläche zur Auslösung des Umlagerungsprozesses. Diese Struktur ermöglicht eine klare Trennung zwischen Informationsanzeige und Steuerungsfunktion.
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Screenshots/Umlagerung/HMI/Umalgerungsprozess.png}
+	\caption{Manuelles Menü des Umlagerungsprozesses mit Anzeige der aktuellen Position}
+	\label{fig:hmi_umlagerung}
+\end{figure}
+
+Abgebildet ist die Hauptansicht für die Durchführung der Umlagerung. Hier werden die Quell- und Zielpositionen in separaten Eingabebereichen dargestellt: Der obere Bereich (\textit{Von}) dient zur Eingabe der aktuellen Position (X-Soll, Y-Soll), während der untere Bereich (\textit{Nach}) die Zielposition aufnimmt. Darunter befindet sich eine Schaltfläche zur Auslösung des Umlagerungsprozesses. Rechts ist eine schematische Darstellung der Anlage integriert, die den räumlichen Bezug zum Hochregallager verdeutlicht. Diese Ansicht ermöglicht eine intuitive Bedienung und stellt alle relevanten Parameter für die Umlagerung kompakt dar.

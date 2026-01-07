@@ -8,41 +8,32 @@ Deshalb wurden die bereits erwähnten Bussysteme eingeführt. Mit deren Hilfe is
 Ein Bussystem besteht grundsätzlich aus einer Leitung, über die mehrere Teilnehmer angesprochen werden können. Die Topologie ist hierbei vielfältig. Es gibt sogenannte \textbf{Stern}-, \textbf{Linien}- oder auch \textbf{Ring}-Topologien.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{images/Topologien}
+	\includegraphics[width=0.4\linewidth]{images/Topologien}
 	\caption{Gängige Bus- Topologien; Quelle \cite{Bustopologien}}
 	\label{Bustopologien}
 \end{figure}
 Die am häufigsten angewandte Methode ist die Kommunikation über eine \textbf{Linientopologie}.\\
 Hierbei werden mehrere Teilnehmer über einzelne Abzweige nacheinander angesteuert.\\
 Bussysteme können auf den verschiedensten Ebenen der Automatisierungspyramide\cite{IO_Link} zum Einsatz kommen. Der Haupteinsatz erfolgt jedoch auf der Feld- und Steuerungsebene.\\
-Weiterhin gibt es verschiedene Arten von Bussystemen, die sich in ihrer Struktur, Geschwindigkeit und Übertragungsart unterscheiden.\\
+Weiterhin gibt es verschiedene Arten von Bussystemen, die sich in ihrer Struktur, Geschwindigkeit und Übertragungsart unterscheiden.
 Die am häufigsten verwendeten sind im Folgenden aufgelistet:
 \begin{itemize}
 	\item Feldbus-basierte Kommunikationssysteme (z.\,B. \textbf{Profibus})
 	\item Ethernet-basierte Kommunikationssysteme (z.\,B. \textbf{PROFINET})
 	\item Punkt-zu-Punkt-Systeme (z.\,B. \textbf{IO-Link})
 \end{itemize}
-\newpage
 Im Folgenden eine kurze Gegenüberstellung der einzelnen Protokolle:
 \begin{table}[H]
 	\centering
 	\label{tab:busvergleich}
-	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\arraystretch}{1.2}
 	\begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
 		\hline
 		\textbf{Kriterium} & \textbf{IO-Link} & \textbf{PROFINET} & \textbf{PROFIBUS} \\ \hline
 		\textbf{Kommunikations- prinzip}  & Punkt-zu-Punkt (PTP) & Ethernet-basiert & Feldbus-basiert \\ \hline
-		\textbf{Topologie} & Linie, Stern & Linie, Stern, Ring & Linie, Baum \\ \hline
-		\textbf{Übertragungsart} & Ungeschirmte Standardleitung (3-adrig) & Ethernet-Kabel (Cat 5/6) & Geschirmtes Twisted-Pair-Kabel \\ \hline
+		\textbf{Topologie} & Baum & Linie, Stern, Ring & Linie, Baum \\ \hline
 		\textbf{Kommunikations- rate} & 4{,}8 / 38{,}4 / 230{,}4\,kBaud & bis 100\,Mbit/s & bis 12\,Mbit/s \\ \hline
-		\textbf{Kommunikations- Richtung} & Bidirektional & Bidirektional & Halbduplex \\ \hline
-		\textbf{Adressierung} & Automatische Geräteidentifikation (IODD) & IP-Adresse / Gerätetyp & Manuelle Geräteadresse \\ \hline
-		\textbf{Einsatzebene} & Sensor-/Aktor-Ebene (Feldebene) & Steuerungs- und Leitebene & Feld- und Steuerungsebene \\ \hline
-		\textbf{Diagnosefähig- keit} & Umfassend (Gerätestatus, Parametrierung, Fehlerdiagnose) & Hoch (Netzwerkdiagnose, Gerätediagnose) & Mittel (Telegrammfehler, Gerätefehler) \\ \hline
-		\textbf{Verdrahtungs- aufwand} & Sehr gering & Mittel & Hoch \\ \hline
-		\textbf{Integration in SPS-Systeme} & Über IO-Link-Master (Gateway) & Direkt (z.\,B. TIA Portal) & Über DP-Schnittstelle \\ \hline
 		\textbf{Typische Anwendung} & Sensorik, Aktorik, Handhabungstechnik & Steuerung, Kommunikation, Anlagenvernetzung & Maschinensteuer., Antriebsregelung \\ \hline
-		\textbf{Standardisierung} & IEC~61131-9 & IEC~61158 / IEEE~802.3 & IEC~61158 \\ \hline
 	\end{tabular}
 	\caption{Vergleich der Kommunikationssysteme IO-Link, PROFINET und PROFIBUS; Quellen: \cite{IO_Link}\cite{Schnell.2019}\cite{Langmann.2021}}
 \end{table}
@@ -107,7 +98,7 @@ Ein vollständiges IO-Link-System besteht in der Regel aus folgenden Komponenten
 Damit trägt IO-Link wesentlich zur Transparenz, Flexibilität und Wartungsfreundlichkeit moderner Automatisierungssysteme bei und bildet eine wichtige Grundlage für Konzepte wie \textbf{Industrie~4.0}\cite{IO_Link}.
 \subsubsection{Vorteile und Nutzen in der Praxis}
 Der Einsatz von IO-Link in der Industrie bringt zahlreiche Vorteile mit sich. Es werden technische Defizite von klassischen Bus- und Anschlusssystemen eliminiert. Neben der Vereinfachung der Verdrahtung bietet das System eine hohe Flexibilität, verbesserte Diagnosefähigkeiten sowie eine sehr gute digitale Kommunikation bis in die Feldebene hinein.\\
-Durch die genannten Punkte wird nicht nur die Leistungsfähigkeit der Anlage gesteigert, sondern auch die Wirtschaftlichkeit und Nachhaltigkeit in einer Produktion verbessert.\newpage
+Durch die genannten Punkte wird nicht nur die Leistungsfähigkeit der Anlage gesteigert, sondern auch die Wirtschaftlichkeit und Nachhaltigkeit in einer Produktion verbessert.
 \subsubsection*{Technische Vorteile}
 Ein zentraler technischer Vorteil von IO-Link besteht in der vollständig digitalen Signalübertragung zwischen dem IO-Link-Master und den angeschlossenen Devices. Dadurch entfallen typische Nachteile analoger Schnittstellen wie Messfehler durch Spannungsabfall, Rauschen oder Kalibrierungsabweichungen. Jeder über IO-Link verbundene Sensor oder Aktor überträgt exakte Prozessdaten in digitaler Form, wodurch die Messqualität und Zuverlässigkeit deutlich erhöht werden.\\
 Ein weiterer Vorteil ist die sogenannte bidirektionale Kommunikation. Hierbei ist es möglich, dass der IO-Link-Master Daten empfangen kann, sowie in der Lage ist, die Parameter der Sensoren oder Aktoren zu beschreiben.\\

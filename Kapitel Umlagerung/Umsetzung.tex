@@ -1,0 +1,102 @@
+\subsection{Umsetzung im TIA Portal}
+Im Rahmen der Automatisierung der Modellhochregalanlage wurde eine Umlagerfunktion implementiert, die den Transport von Ladeeinheiten zwischen unterschiedlichen Lagerplätzen ermöglicht. Zur Realisierung dieser Funktion wurde eine Schrittkette eingesetzt, da sie eine strukturierte und übersichtliche Abbildung sequenzieller Abläufe erlaubt. Die Schrittkette dient hierbei als Steuerungslogik, um die einzelnen Prozessschritte – vom Anfahren des Quellplatzes über die Aufnahme der Ladeeinheit bis hin zur Ablage am Zielplatz – in einer definierten Reihenfolge auszuführen. Durch diese Vorgehensweise wird eine hohe Prozesssicherheit gewährleistet und die Komplexität der Steuerung reduziert.
+
+\subsubsection{Aufruf und Funktionsprinzip der Positionsvergleichsfunktion}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Screenshots/Umlagerung/Aufruf Pos._Vergleichsfunktion.png}
+	\caption{Aufruf des Positionsvergleichs}
+	\label{fig:umlagerung_positionsvergleich}
+\end{figure}
+Zur Bestimmung der für die Umlagerung notwendigen Fahrwege wird eine Positionsvergleichsfunktion (\texttt{Vergleiche\_Fahrweg}) aufgerufen, welche aus den Sollwerten der Quell- (\(P_1\)) und Zielposition (\(P_2\)) die Differenzen in den kartesischen Achsen berechnet und daraus die jeweilige Fahrtrichtung ableitet. Der Aufruf erfolgt in Abhängigkeit des aktuellen Umlagerungskontextes (manueller Modus und Übersichts-Modus), wobei die Eingänge als Sollwertpaare für X und Y übergeben werden und die Ausgänge als Richtungsflags bereitgestellt werden.
+
+Formal seien die Sollwerte der Positionen gegeben durch
+\[
+P_1 = (X_1,\, Y_1), \qquad P_2 = (X_2,\, Y_2).
+\]
+Die Funktion berechnet die Restwege (Differenzen)
+\[
+\Delta X = X_2 - X_1, \qquad \Delta Y = Y_2 - Y_1,
+\]
+und leitet hieraus die Richtungsentscheidung für die Verfahrbewegungen ab:
+\[
+b\_\mathrm{Fahrtrichtung\_X} =
+\begin{cases}
+	\texttt{TRUE} & \text{falls } \Delta X > 0 \quad (\text{Fahrt nach rechts})\\
+	\texttt{FALSE} & \text{falls } \Delta X < 0 \quad (\text{Fahrt nach links})
+\end{cases}
+\]
+
+\[
+b\_\mathrm{Fahrtrichtung\_Y} =
+\begin{cases}
+	\texttt{TRUE} & \text{falls } \Delta Y > 0 \quad (\text{Fahrt nach oben})\\
+	\texttt{FALSE} & \text{falls } \Delta Y < 0 \quad (\text{Fahrt nach unten})
+\end{cases}
+\]
+Für den Grenzfall \(\Delta X = 0\) bzw. \(\Delta Y = 0\) wird keine Bewegungsanforderung in der jeweiligen Achse generiert, womit die Schrittfolge unmittelbar zur nächsten Achsenbewegung bzw.\ zum nachfolgenden Prozessschritt übergeht.
+
+Der Funktionsaufruf ist in zwei Varianten ausgeführt, die jeweils an den aktiven Modus (\texttt{b\_Merker\_m} bzw.\ \texttt{b\_Merker\_ue}) gebunden sind. In beiden Fällen werden als Eingangsparameter die Sollwerte von Quell- und Zielplatz übergeben; die Ausgänge setzen die Richtungsflags:
+
+Die Ausgabeparameter sind in beiden Fällen identisch und werden den nachgeschalteten GRAFCET‑Verzweigungen zur Richtungswahl zugeführt:
+\[
+b\_\mathrm{Fahrtrichtung\_X} \Rightarrow
+\begin{cases}
+	\texttt{Motor\_X\_rechts} & \text{bei } \Delta X > 0\\
+	\texttt{Motor\_X\_links} & \text{bei } \Delta X < 0
+\end{cases}
+\]
+
+\[
+b\_\mathrm{Fahrtrichtung\_Y} \Rightarrow
+\begin{cases}
+	\texttt{Motor\_Y\_hoch} & \text{bei } \Delta Y > 0\\
+	\texttt{Motor\_Y\_runter} & \text{bei } \Delta Y < 0
+\end{cases}
+\]
+Damit stellt die Positionsvergleichsfunktion die für die Verzweigungen in X‑ und Y‑Richtung notwendigen Entscheidungsgrößen bereit und gewährleistet eine konsistente, zustandsabhängige Ansteuerung der Lineareinheiten. Die klare Trennung von Berechnung (\(\Delta X, \Delta Y\)) und Aktorik‑Auswahl (Richtungsflags) erhöht die Wartbarkeit und unterstützt die modulare Erweiterbarkeit der Schrittkette.
+
+\subsubsection{Schritt 10.1 im Kontext der Schrittkette}
+Die in Abbildung \ref{fig:grafcet_umlagerung} dargestellte GRAFCET-Struktur verdeutlicht die logische Verzweigung innerhalb der Umlagerungsschrittkette. Nach dem Schritt \textit{Bereit\_Zum\_Verfahren\_In\_X} (Schritt 9) erfolgt die Entscheidung über die Fahrtrichtung der X-Achse. Diese Entscheidung basiert auf dem Ergebnis der zuvor aufgerufenen Positionsvergleichsfunktion (\texttt{Vergleiche\_Fahrweg}), die die Differenz zwischen Quell- und Zielposition berechnet und die Richtungsflags \texttt{b\_Fahrtrichtung\_X} und \texttt{b\_Fahrtrichtung\_Y} setzt.
+
+Die Verzweigung in Schritt 10 ist wie folgt aufgebaut:
+\begin{itemize}
+	\item \textbf{Schritt 10.1 – Motor\_X\_rechts:} Wird das Flag \texttt{b\_Fahrtrichtung\_X} auf \texttt{TRUE} gesetzt, erfolgt die Ansteuerung des Motors für die Bewegung in positiver X-Richtung.
+	\item \textbf{Schritt 10.2 – Motor\_X\_links:} Ist das Flag \texttt{b\_Fahrtrichtung\_X} \texttt{FALSE}, wird der Motor für die Bewegung in negativer X-Richtung aktiviert.
+\end{itemize}
+
+Die Umsetzung in der SPS-Logik ist in Abbildung \ref{fig:umlagerung_schritt10} dargestellt. Hier wird die Schrittnummer über ein \texttt{MOVE}-Befehl gesetzt, sobald die Aktivierungsbedingungen erfüllt sind. Die logische Verknüpfung erfolgt über ein Set-Reset-Glied (\texttt{SR}), das den Schrittstatus verwaltet. Die Aktivierung von Schritt 10.1 ist somit direkt an die Fahrtrichtungsentscheidung gekoppelt, die aus der Positionsvergleichsfunktion resultiert.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Screenshots/Umlagerung/Schrittverzweigung_Beispiel_10.1.png}
+	\caption{SPS-Implementierung für Schritt 10.1 (Motor\_X\_rechts)}
+	\label{fig:umlagerung_schritt10}
+\end{figure}
+
+Wie in der Abbildung ersichtlich, wird die Aktivierung der Schrittnummer \texttt{10.1} durch die Transitionsbedingung \texttt{T9\_10A} ausgelöst. Diese Bedingung wird erfüllt, sobald die Fahrtrichtung in positiver X-Achse erforderlich ist, wie zuvor durch die Positionsvergleichsfunktion bestimmt. Analog dazu wird bei aktiver Transitionsbedingung \texttt{T9\_10B} die Schrittnummer \texttt{10.2} aktiviert, wodurch die Bewegung in negativer X-Achse erfolgt. 
+
+Durch diese logische Struktur entsteht eine klare und funktionale Verzweigung innerhalb der Schrittkette. Sie ermöglicht eine dynamische Auswahl des Prozesspfades in Abhängigkeit der berechneten Richtungsflags und trägt somit zur Flexibilität und Modularität des Steuerungsprogramms bei.
+Analog dazu wird mit Schritt 12.1 bzw. 12.2 die Fahrtrichtung der y-Achse festgelegt.
+
+\subsubsection{Lagerplatzmanagement im Umlagerungsprozess}
+Das Lagerplatzmanagement stellt sicher, dass die Umlagerung nur auf freie Zielplätze erfolgt und die Bestandsdaten konsistent aktualisiert werden. Die Umsetzung erfolgt in zwei logischen Schritten, die in den folgenden Abbildungen dargestellt sind.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Screenshots/Umlagerung/Lagerplatz_Managing.png}
+	\caption{Prüfung des Lagerplatzstatus und Setzen der Platzwahl}
+	\label{fig:umlagerung_lagerplatzstatus}
+\end{figure}
+
+Die erste Abbildung zeigt die Prüfung des Lagerplatzstatus im Kontext der Schrittkette. Sobald die Schrittnummer für die Umlagerung (\texttt{i\_Schrittketten\_Nr\_Umlagerung}) den Wert \texttt{2} erreicht, wird die Platzwahl aus der Übersicht aktiviert. Hierbei wird überprüft, ob der Zielplatz im Datenbaustein \texttt{DB\_Lagerbestand} als belegt oder frei gekennzeichnet ist. Ist der Status \texttt{False}, wird die Variable \texttt{b\_Platzwahl\_abgeschlossen} auf \texttt{TRUE} gesetzt und der Platz als frei markiert (\texttt{b\_Lagerplatz\_belegt := FALSE}). Andernfalls wird der Platz als belegt gekennzeichnet und die Platzwahl bleibt unvollständig. Diese Logik verhindert fehlerhafte Umlagerungen auf bereits belegte Positionen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Screenshots/Umlagerung/Lagerplatz_Managing_Update.png}
+	\caption{Aktualisierung des Lagerbestands nach erfolgreicher Umlagerung}
+	\label{fig:umlagerung_lagerplatzupdate}
+\end{figure}
+
+Die zweite Abbildung zeigt die Aktualisierung des Lagerbestands nach erfolgreicher Umlagerung. Hierbei werden die Daten des Quellplatzes zurückgesetzt und die Zielposition mit den neuen Informationen beschrieben. Dies umfasst die Statusvariable (\texttt{b\_Status}), die eindeutige Identifikationsnummer (\texttt{di\_UID\_Teil}), die Artikelnummer sowie den Zeitstempel. Die Logik unterscheidet zwischen manueller Umlagerung (\texttt{b\_manuelle\_Umlagerung\_aktiv}) und Umlagerung aus der Übersicht (\texttt{b\_uebersicht\_Umlagerung\_aktiv}), wobei in beiden Fällen die Datenbankeinträge konsistent angepasst werden. Durch diese Vorgehensweise wird sichergestellt, dass die Bestandsdaten jederzeit aktuell sind und die Nachverfolgbarkeit der Umlagerungen gewährleistet bleibt.

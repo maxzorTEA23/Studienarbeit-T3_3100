@@ -1,0 +1,58 @@
+\subsection{Komponentenübersicht und Systemaufbau}
+Für die Umsetzung der Sicherheitsfunktion wurde ein Systemaufbau realisiert, der die Lichtschranke direkt mit einem IO-Link-Master und der SPS verbindet. Im Folgenden werden die eingesetzten Komponenten sowie deren Zusammenspiel innerhalb des Gesamtsystems beschrieben.\\[0.3cm]
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|p{4cm}|p{4cm}|p{5cm}|p{2.5cm}|}
+		\hline
+		\textbf{Komponente} & \textbf{Hersteller / Typ} & \textbf{Funktion} & \textbf{Schnittstelle} \\ \hline
+		Lichtgitter / Lichtschranke & IFM OY5100 (Infrarot) & Erfassung von Objekten und Überwachung des Gefahrenbereichs & IO-Link \\ \hline
+		IO-Link Master & IFM AL1100 & Kommunikation zwischen IO-Link-Devices und der SPS & PROFINET / IO-Link \\ \hline
+		SPS & Siemens S7-1500 & Steuerung des gesamten Systems, Verarbeitung der Sensorsignale & PROFINET \\ \hline
+		Netzteil 24V DC & Siemens SITOP / vergleichbar & Versorgung von IO-Link-Master, Lichtschranke und SPS & 24V DC \\ \hline
+		Aktorik (Zylinder / Motor) & Festo (pneumatisch) & Ausführung der Ein- und Auslagerbewegung & Digitale Ausgänge der SPS \\ \hline
+	\end{tabular}
+	\caption{Übersicht der verwendeten Komponenten im Systemaufbau}
+	\label{tab:komponenten}
+\end{table}
+
+In Tabelle~\ref{tab:komponenten} sind die einzelnen Komponenten des Hochregallagers rund um die Lichtschranke dargestellt.\\
+Diese müssen optimal miteinander interagieren, um die gewünschte Funktionalität sicherzustellen.\\
+Die Lichtschranke ist vom Typ \textbf{OY5100} und stammt vom Hersteller \textbf{IFM}. Es handelt sich hierbei um ein steuerbares Lichtgitter, das über IO-Link mit der SPS kommuniziert.
+\subsubsection{Systemaufbau}
+Die folgende Abbildung zeigt den strukturellen Aufbau des Gesamtsystems in vereinfachter Form.\\[0.2cm]
+
+\begin{figure}[H]
+	%\hspace*{-1cm} % optional: Diagramm leicht nach links verschoben
+	\begin{tikzpicture}[
+		node distance=1.8cm,
+		>=latex,
+		font=\small,
+		every node/.style={align=center}
+		]
+		% Nodes (vertikal angeordnet)
+		\node (sps) [draw, rectangle, fill=orange!10, minimum width=3.5cm, minimum height=1cm] {SPS\\(Siemens S7-1500)};
+		\node (master) [draw, rectangle, fill=green!10, below=of sps, minimum width=3.5cm, minimum height=1cm] {IO-Link Master\\(IFM AL1100)};
+		\node (sensor) [draw, rectangle, fill=blue!10, below=of master, minimum width=3.5cm, minimum height=1cm] {Lichtgitter\\(IFM OY5100)};
+		\node (actuator) [draw, rectangle, fill=red!10, below=of sensor, minimum width=3.5cm, minimum height=1cm] {Aktorik\\(Zylinder / Motor)};
+		\node (power) [draw, rectangle, fill=gray!15, left=3cm of master, minimum width=3cm, minimum height=1cm] {Netzteil\\24V DC};
+		
+		% Signalfluss (von oben nach unten)
+		\draw[->, thick] (sps) -- (master) node[midway, right]{\textbf{PROFINET}};
+		\draw[->, thick] (master) -- (sensor) node[midway, right]{\textbf{IO-Link}};
+		\draw[->, thick] (sensor) -- (actuator) node[midway, right]{\textbf{Signal / Reaktion}};
+		
+		% Spannungsversorgung (seitlich)
+		\draw[->, thick] (power) -- (master) node[midway, above]{24V DC};
+		\draw[->, thick] (power) |- (sensor);
+		\draw[->, thick] (power) |- (sps);
+		
+	\end{tikzpicture}
+	\caption{Vertikaler Systemaufbau des Lichtgatter-Systems}
+	\label{fig:systemaufbau_vertikal}
+\end{figure}
+
+Im Diagramm~\ref{fig:systemaufbau_vertikal} ist der Aufbau der einzelnen Komponenten grafisch dargestellt. Der IO-Link-Master dient hierbei als Schnittstelle zwischen SPS und Lichtgitter und steuert die Kommunikation über das im TIA Portal implementierte Programm.\\
+Im Fehlerfall werden gefährliche Bewegungen, die beispielsweise vom Zylinder oder den Motoren der Linearachsen ausgehen, automatisch gestoppt.\\
+Im folgenden Abschnitt wird die Implementierung dieser Sicherheitslogik in der SPS detailliert erläutert.
