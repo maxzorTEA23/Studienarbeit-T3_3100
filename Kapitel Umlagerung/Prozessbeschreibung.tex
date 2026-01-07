@@ -2,3 +2,21 @@
 %Die \textbf{Beschreibung des Funktionsablaufs} stellt einen zentralen Bestandteil der technischen Dokumentation dar. Sie dient dazu, die einzelnen Schritte eines Prozesses in ihrer \textbf{logischen Reihenfolge} darzustellen und die zugrunde liegenden Bedingungen sowie Übergänge zwischen den Zuständen nachvollziehbar zu machen. Ein strukturierter Ablauf ist nicht nur für die Implementierung relevant, sondern bildet auch die Grundlage für die Analyse von \textbf{Prozesssicherheit}, \textbf{Effizienz} und \textbf{Fehleranfälligkeit}.
 
 In diesem Kapitel wird der Funktionsablauf aus einer \textbf{systemorientierten Perspektive} betrachtet. Ziel ist es, die \textbf{Interaktion der beteiligten Komponenten} sowie die \textbf{Abhängigkeiten zwischen mechanischen Bewegungen, Steuerungslogik und Sicherheitsmechanismen} darzustellen. Darüber hinaus werden die wesentlichen Prozessschritte erläutert, die für einen \textbf{störungsfreien Betrieb} erforderlich sind. Die Darstellung erfolgt unabhängig von der konkreten Programmierung, um eine klare Trennung zwischen \textbf{konzeptioneller Beschreibung} und \textbf{technischer Umsetzung} zu gewährleisten.
+
+\subsection*{Entwurf der Schrittkette für Umlagerungen}
+Die im Rahmen dieser Arbeit implementierte Umlagerungsfunktion basiert konzeptionell auf den bereits vorhandenen Schrittketten für die Einlagerungs- und Auslagerungsprozesse. Beide Abläufe bilden die Grundlage für die Umlagerung, da sie die wesentlichen Bewegungs- und Steuerungslogiken enthalten, die für den sicheren Transport von Ladeeinheiten erforderlich sind. Die Umlagerung kombiniert diese beiden Prozessketten in einer strukturierten Sequenz: Zunächst wird die Ladeeinheit am Quellplatz aufgenommen (analog zur Auslagerung), anschließend erfolgt die Verfahrbewegung zum Zielplatz und die Ablage (analog zur Einlagerung).
+
+Allerdings wurde für die Realisierung der Umlagerungsfunktion eine eigenständige Schrittkette entwickelt. Dies war notwendig, da der Umlagerungsprozess im Vergleich zu den bestehenden Abläufen zusätzliche Anforderungen stellt: Zum einen sind mehr Schritte erforderlich, um die vollständige Sequenz von Aufnahme, Transport und Ablage abzubilden. Zum anderen müssen an zwei Stellen Verzweigungen integriert werden, um unterschiedliche Prozesspfade abhängig von den Betriebsbedingungen zu ermöglichen. Durch die Erstellung einer eigenen Schrittkette wird sichergestellt, dass die Logik klar strukturiert bleibt und die zusätzlichen Schritte sowie Verzweigungen ohne Beeinträchtigung der bestehenden Programme umgesetzt werden können.
+
+\subsection*{Besonderheiten der Umlagerungsschrittkette}
+Die Umlagerungsschrittkette stellt eine Erweiterung der bestehenden Abläufe für Einlagerung und Auslagerung dar, basiert jedoch nicht ausschließlich auf deren Struktur. Während die Grundlogik der Bewegungen übernommen wurde, erfordert die Umlagerung zusätzliche Schritte und Verzweigungen, um die komplexeren Anforderungen dieses Prozesses abzubilden. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{Screenshots/Umlagerung/Grafcet.png}
+	\caption{GRAFCET-Ausschnitt der Umlagerungsschrittkette mit zwei Verzweigungen zur Richtungsbestimmung}
+	\label{fig:umlagerung_grafcet}
+\end{figure}
+
+Im Gegensatz zu den linearen Schrittketten der Ein- und Auslagerung muss die Umlagerung sowohl die horizontale als auch die vertikale Fahrtrichtung dynamisch bestimmen. Dies wird im dargestellten GRAFCET deutlich: Nach der Initialisierung (\textit{Bereit\_Zum\_Verfahren\_In\_X}) erfolgt die erste Verzweigung, bei der abhängig von der Soll-/Ist-Position die Fahrtrichtung der X-Achse gewählt wird (\textit{Motor\_X\_rechts} oder \textit{Motor\_X\_links}). Nach Erreichen der Zielposition wird analog die Y-Achse angesteuert, wobei ebenfalls eine Verzweigung zwischen \textit{Motor\_Y\_hoch} und \textit{Motor\_Y\_runter} erfolgt. 
+
+Diese beiden Verzweigungen sind notwendig, um die Umlagerung flexibel zwischen beliebigen Lagerplätzen auszuführen. Aufgrund der zusätzlichen Schritte und der logischen Verzweigungen wurde eine eigenständige Schrittkette entwickelt, anstatt die bestehenden Abläufe lediglich zu kombinieren. Dadurch bleibt die Programmstruktur übersichtlich, und die Steuerungslogik kann die erhöhten Anforderungen hinsichtlich Prozesssicherheit und Flexibilität erfüllen.
