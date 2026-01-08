@@ -10,7 +10,7 @@ Im Rahmen der Automatisierung der Modellhochregalanlage wurde eine Umlagerfunkti
 	\label{fig:umlagerung_positionsvergleich}
 \end{figure}
 Zur Bestimmung der für die Umlagerung notwendigen Fahrwege wird eine Positionsvergleichsfunktion (\texttt{Vergleiche\_Fahrweg}) aufgerufen, welche aus den Sollwerten der Quell- (\(P_1\)) und Zielposition (\(P_2\)) die Differenzen in den kartesischen Achsen berechnet und daraus die jeweilige Fahrtrichtung ableitet. Der Aufruf erfolgt in Abhängigkeit des aktuellen Umlagerungskontextes (manueller Modus und Übersichts-Modus), wobei die Eingänge als Sollwertpaare für X und Y übergeben werden und die Ausgänge als Richtungsflags bereitgestellt werden.
-
+\clearpage
 Formal seien die Sollwerte der Positionen gegeben durch
 \[
 P_1 = (X_1,\, Y_1), \qquad P_2 = (X_2,\, Y_2).
