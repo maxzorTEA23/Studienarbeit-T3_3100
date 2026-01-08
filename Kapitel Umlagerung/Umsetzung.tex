@@ -58,7 +58,7 @@ b\_\mathrm{Fahrtrichtung\_Y} \Rightarrow
 Damit stellt die Positionsvergleichsfunktion die für die Verzweigungen in X‑ und Y‑Richtung notwendigen Entscheidungsgrößen bereit und gewährleistet eine konsistente, zustandsabhängige Ansteuerung der Lineareinheiten. Die klare Trennung von Berechnung (\(\Delta X, \Delta Y\)) und Aktorik‑Auswahl (Richtungsflags) erhöht die Wartbarkeit und unterstützt die modulare Erweiterbarkeit der Schrittkette.
 
 \subsubsection{Schritt 10.1 im Kontext der Schrittkette}
-Die in Abbildung \ref{fig:grafcet_umlagerung} dargestellte GRAFCET-Struktur verdeutlicht die logische Verzweigung innerhalb der Umlagerungsschrittkette. Nach dem Schritt \textit{Bereit\_Zum\_Verfahren\_In\_X} (Schritt 9) erfolgt die Entscheidung über die Fahrtrichtung der X-Achse. Diese Entscheidung basiert auf dem Ergebnis der zuvor aufgerufenen Positionsvergleichsfunktion (\texttt{Vergleiche\_Fahrweg}), die die Differenz zwischen Quell- und Zielposition berechnet und die Richtungsflags \texttt{b\_Fahrtrichtung\_X} und \texttt{b\_Fahrtrichtung\_Y} setzt.
+Die in Abbildung \ref{fig:umlagerung_grafcet} dargestellte GRAFCET-Struktur verdeutlicht die logische Verzweigung innerhalb der Umlagerungsschrittkette. Nach dem Schritt \textit{Bereit\_Zum\_Verfahren\_In\_X} (Schritt 9) erfolgt die Entscheidung über die Fahrtrichtung der X-Achse. Diese Entscheidung basiert auf dem Ergebnis der zuvor aufgerufenen Positionsvergleichsfunktion (\texttt{Vergleiche\_Fahrweg}), die die Differenz zwischen Quell- und Zielposition berechnet und die Richtungsflags \texttt{b\_Fahrtrichtung\_X} und \texttt{b\_Fahrtrichtung\_Y} setzt.
 
 Die Verzweigung in Schritt 10 ist wie folgt aufgebaut:
 \begin{itemize}
