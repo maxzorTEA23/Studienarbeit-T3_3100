@@ -9,18 +9,15 @@ def Einlagern_CSV(plc):
     table = pd.read_csv('CSV_Daten.csv', sep=";")
     table.columns = table.columns.str.strip()
     # Einlesen der Werte nach Einlagerung von SPS
-    Lagerplatz_x, Lagerplatz_y, rfid_code_1, rfid_code_2= Einlesen(plc)
-    RFID_Code = f"{rfid_code_1}-{rfid_code_2}"
+    Lagerplatz_x, Lagerplatz_y, Artikelnummer= Einlesen(plc)
     # überprüfung ob Code vorhanden (RFID vgl Barcode)
-    row = table.loc[table["Barcode"] == RFID_Code]
+    row = table.loc[table["Barcode"] == Artikelnummer]
     # Joining anhand des Codes 
     if not row.empty:
-        table.loc[table["Barcode"] == RFID_Code, "Lagerplatz x"] = Lagerplatz_x
-        table.loc[table["Barcode"] == RFID_Code, "Lagerplatz y"] = Lagerplatz_y
+        table.loc[table["Barcode"] == Artikelnummer, "Lagerplatz x"] = Lagerplatz_x
+        table.loc[table["Barcode"] == Artikelnummer, "Lagerplatz y"] = Lagerplatz_y
     # Speichern der neuen Tabelle mit aktualisierten Werten
     table.to_csv("CSV_Daten.csv",sep=";", index=False)
-    schreibe_historie("Einlagerung", RFID_Code,Lagerplatz_x,Lagerplatz_y)
+    schreibe_historie("Einlagerung", Artikelnummer,Lagerplatz_x,Lagerplatz_y)
     print(table)
     
-
-Einlagern_CSV(1)

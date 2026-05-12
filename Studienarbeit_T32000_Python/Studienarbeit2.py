@@ -7,25 +7,27 @@ from Einlagern_CSV import Einlagern_CSV
 from Auslagern import Auslagern
 # Verbindung zur SPS aufbauen
 plc = snap7.client.Client()
-plc.connect()
+plc.connect("192.168.0.20",0,1)
 # Flag für "Einlagerung erfolgt" ,durch SPS, setzen  
-Data_Einlagerung = plc.db_read(10,0,1)
-Einlagerung_erfolgt = get_bool(Data_Einlagerung,0)
+
 # Scleife in der Prozesse laufen
 try:
     while True:
+       
+        Data_Einlagerung = plc.db_read(41,28,1)
+        Einlagerung_erfolgt = get_bool(Data_Einlagerung,0,0)
         # CSV Datei beschreiben nach Einlagerungsprozess
         if Einlagerung_erfolgt:
             Einlagern_CSV(plc)
         # Scanner Flag setzen
-        code_Scanner = input()
+        code_Scanner = "1041573"
         # Auslagerungsprozess Auftragsbasiert starten
         if code_Scanner:
-            Auslagern(plc)
+            Auslagern(plc,code_Scanner)
             # Flag an SPS senden das Daten überschrieben wurden 
-            data_uebernommen = plc.db_read(10,2,1)
+            data_uebernommen = plc.db_read(41,4,1)
             set_bool(data_uebernommen,0,0,True)
-            plc.db_write(10, 2, data_uebernommen)
+            plc.db_write(41, 4, data_uebernommen)
 
 except KeyboardInterrupt:
     print("Programm beendet")

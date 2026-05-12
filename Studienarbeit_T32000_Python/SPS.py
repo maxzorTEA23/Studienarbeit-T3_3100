@@ -11,14 +11,11 @@ def Einlesen(plc):
     data_y = plc.db_read(2, 2, 2) # int = 2 Byte
     lagerplatz_y = get_int(data_y, 0)
 
-    data_rfid_1 = plc.db_read(34, 6, 4)  # STRING[10] = 12 Byte
-    rfid_code_1 = get_string(data_rfid_1, 0)
-
-    data_rfid_2 = plc.db_read(34, 10, 4)  # STRING[10] = 12 Byte
-    rfid_code_2 = get_string(data_rfid_2, 0)
-    return lagerplatz_x, lagerplatz_y, rfid_code_1, rfid_code_2
+    data_ArtikelNummer = plc.db_read(34, 16, 22)  # STRING[10] = 12 Byte
+    Artikelnummer = get_string(data_ArtikelNummer, 0)
+    return lagerplatz_x, lagerplatz_y, data_ArtikelNummer
 # Funktion zum Schreiben von Werten auf SPS Variablen
-def Schreiben(plc, Lagerplatz_x, Lagerplatz_y, Barcode):
+def Schreiben(plc, Lagerplatz_x, Lagerplatz_y, Material):
 
     data_x = bytearray(2) # Festlegen des Array Bereiches 
     set_int(data_x, 0, Lagerplatz_x) # Umwandlung Python Datentyp in Bytes 
@@ -27,5 +24,13 @@ def Schreiben(plc, Lagerplatz_x, Lagerplatz_y, Barcode):
     data_y = bytearray(2)
     set_int(data_y, 0, Lagerplatz_y)
     plc.db_write(41, 2, data_y)   # Byte 2
+
+    #data_Barcode = bytearray(22)
+    #set_int(data_Barcode, 0, Barcode)
+    #plc.db_write(41, , data_Barcode)
+    print(Material)
+    data_Material = bytearray(22)
+    set_string(data_Material, 0, Material,20)
+    plc.db_write(41, 6, data_Material)   # Byte 2
 
     
