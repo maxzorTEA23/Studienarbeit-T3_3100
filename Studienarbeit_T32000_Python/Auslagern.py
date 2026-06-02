@@ -1,6 +1,7 @@
 # Import Bibliotheken
 from SPS import Schreiben
 from Historie import schreibe_historie
+from snap7.util import set_bool 
 import pandas as pd
 # Funktion zur Steuerung des Auftragsbasierenden Auslagerns
 def Auslagern(plc, Code_Scanner):
@@ -28,6 +29,8 @@ def Auslagern(plc, Code_Scanner):
         Schreiben(plc, Lagerplatz_x, Lagerplatz_y, Material)
         schreibe_historie("Auslagerung", Barcode,Lagerplatz_x,Lagerplatz_y)
         print(f"Auslagerung gestartet: {Barcode} → ({Lagerplatz_x}, {Lagerplatz_y})")
+        
+       
 
     else:
         # Fehlermeldung falls Barcode nicht gefunden wird 

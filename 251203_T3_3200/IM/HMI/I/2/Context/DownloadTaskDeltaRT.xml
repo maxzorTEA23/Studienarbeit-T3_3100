@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DownloadTask xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ProjectInfo ProjectId="8819ad18-eac0-4ed0-aba5-048cda71604b" ESProjectName="251203_T3_3200" ESDeviceName="HMI_RT_2" RtProjectFolderName="251203_T3_3200.HMI_2[MTP1500 Unified Comfort]" RtProjectName="251203_T3_3200.HMI_2[MTP1500 Unified Comfort]" DeviceType="MTP1500 Unified Comfort" DeviceVersion="17.0.0.0" CreationTime="11/13/2023 20:38:26" RuntimeAddonFolderName="UCP_7_22" FirmwareFileName="" RuntimeFileName="" PRCV="3.0.0.0" RTCV="16.0.0.0" RTReleaseNo="17.0.0.0" ImageReleaseNo="17.0.0.5" />
+  <DeltaDownload>deltas\2117\cds.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\ChromIdentification.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\deltaConfig_DistributionInfo.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\deltaConfig_LicenseCounter.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\deltaConfig_PeripheralAddress.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\deltaMain.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\deltaTextLibrary_100_1031.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\deltaTextLibrary_29_1031.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\ProjectCharacteristics.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\config\config.level</DeltaDownload>
+  <DeltaDownload>deltas\2117\screens\screen_1194.rdf</DeltaDownload>
+  <DeltaDownload>deltas\2117\screens\screen_571.rdf</DeltaDownload>
+</DownloadTask>
