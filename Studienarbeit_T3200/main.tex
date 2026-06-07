@@ -1,0 +1,133 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage{helvet}
+\usepackage{pdfpages}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,left = 2.5cm, right = 2.5cm,bottom=2.5cm, top=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{microtype} % hübschere Umbrüche
+\lstset{
+	basicstyle=\ttfamily\small,
+	breaklines=true,
+	breakatwhitespace=false,
+	columns=fullflexible,
+	keepspaces=true,
+	upquote=true,
+}
+\newcommand{\code}[1]{\lstinline!#1!} % Kurzform für Inline-Code
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{ifthen}
+\usepackage{setspace}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\DeclareNameAlias{default}{family-given}
+\addbibresource{Literatur.bib}
+\thispagestyle{plain}
+\hypersetup{pageanchor=false}
+\setcounter{tocdepth}{3}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\newtheorem{definition}{Definition}[section]
+\usepackage{ragged2e}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\lstset{
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{orange},
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	frame=single,
+	breaklines=true,
+	captionpos=b
+}
+\usepackage[ngerman]{babel}
+\usepackage[automark,headsepline,footsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+\automark[section]{section}
+\ohead{}               % links leer
+\ihead{\rightmark}  
+\ofoot[\pagemark]{\pagemark}
+\ifoot[Automatisiertes Modell- Hochregallager]{Automatisiertes Modell- Hochregallager}
+\pagestyle{scrheadings}
+\ModifyLayer[addvoffset=-1ex]{scrheadings.foot.above.line}
+%\usepackage{chngcntr}
+%\counterwithin{figure}{section}
+%\counterwithin{table}{section}
+%Kapitel + Abschnitt in Markierungen übernehmen
+\begin{document}
+	\onehalfspacing
+	\pagenumbering{gobble}
+	\begin{titlepage}
+		\enlargethispage{4.0cm}
+		\sffamily 								% Serifenlose Grundschrift für die Titelseite einstellen
+		\parbox{0.5\linewidth}{
+			\begin{flushleft}
+				\includegraphics[width=0.4\linewidth]{images/DHBW_d_R_FN_46mm_4c.pdf}\\[5ex]
+			\end{flushleft}
+		}
+		
+		
+		\begin{center}
+			
+			{\fontsize{20.74pt}{24pt}\selectfont
+				\textbf{Automatisiertes Modell-Hochregallager}\\[1.5ex]}
+			{\fontsize{14pt}{17pt}\selectfont
+				\textbf{}\\[5ex]}
+			{\fontsize{17pt}{20pt}\selectfont
+				\textbf{T3\_3100}\\[2ex]}
+			{\fontsize{14pt}{17pt}\selectfont
+				Elektrotechnik\\[2ex]}
+			{\fontsize{12pt}{14pt}\selectfont
+				Automation\\[1ex]
+				Duale Hochschule Baden-Württemberg Ravensburg, Campus Friedrichshafen\\[5ex]
+				von\\[1ex]
+				Maximilian Zorko und Willi Schaal\\[15ex]}
+			
+			
+		\end{center}
+		
+		\begin{flushleft}
+			{\fontsize{12pt}{14pt}\selectfont
+				\begin{tabular}{ll}
+					Abgabedatum:					& \quad 09.01.2026 \\
+					Bearbeitungszeitraum:		   	& \quad 16.10.2025 - 08.01.2026    \\ 
+					Matrikelnummer: 			& \quad 3960407/5732737 \\ 
+					Kurs: 							& \quad TEA 23 \\
+					% entfällt bei Studienarbeit
+					Betreuerin / Betreuer:  & \quad Prof. Dr. Ing. Thorsten Kever \\ % Betreuerin / Betreuer der Arbeit
+					%	Gutachterin / Gutachter: & \quad \gutachterdhbw \\ [2ex] % Gutachterin / Gutachter der DHBW (nur bei der Bachelorarbeit erforderlich)
+				\end{tabular}
+			}
+		\end{flushleft}
+		%%%%% Nachfolgende Zeilen einkommentieren, wenn Copyrightvermerk gewünscht ist
+		\begin{flushleft}
+			{\fontsize{11pt}{13pt}\selectfont
+				Copyrightvermerk:\\
+				Dieses Werk einschließlich seiner Teile ist \textbf{urheberrechtlich geschützt}. Jede Verwertung außerhalb der engen Grenzen des Urheberrechtgesetzes ist ohne Zustimmung des Autors unzulässig und strafbar. Das gilt insbesondere für Vervielfältigungen, Übersetzungen, Mikroverfilmungen sowie die Einspeicherung und Verarbeitung in elektronischen Systemen.
+			}
+		\end{flushleft}
+		\begin{flushright}
+			{\fontsize{11pt}{13pt}\selectfont \copyright{} 2026 }
+		\end{flushright}
+	\end{titlepage}
+	
+	\clearpage
+	%input Chapters
+	
+	\newpage
+	\printbibliography
+\end{document}

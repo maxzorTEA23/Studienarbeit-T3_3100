@@ -1,0 +1,22 @@
+\section{Grundlagen}
+
+\subsection{Problemstellung}
+
+In der vorangegangenen Arbeit, \textbf{T3\_3100}, wurden bereits grundlegende Funktionen des Hochregallagers implementiert und erweitert. Dazu zählen insbesondere die Prozesse:
+\begin{itemize}
+	\item Einlagern
+	\item Auslagern
+	\item Umlagern
+\end{itemize}
+
+Die Ein- und Auslagerprozesse wurden dabei vollständig umgesetzt, während die Funktion \textbf{Umlagern} im Rahmen der genannten Arbeit neu eingeführt wurde.\\\\
+Im Fokus der vorliegenden Arbeit steht nun die Erweiterung des bestehenden Auslagerprozesses hin zu einer \textbf{auftragsbasierten Auslagerung}. Ziel ist es, eine realitätsnahe Abbildung industrieller Logistikprozesse zu ermöglichen, bei der Auslagerungen nicht mehr manuell, sondern basierend auf konkreten Aufträgen erfolgen.\\\\
+Zur Umsetzung dieses Ansatzes wird ein \textbf{Scanner} eingesetzt, welcher das Einlesen von Bauteil- oder Artikelcodes ermöglicht. Diese Codes dienen als Grundlage für die Zuordnung und Identifikation von Lagergütern innerhalb des Systems.\\\\
+Ergänzend dazu wird eine \textbf{externe Datenbankanbindung} realisiert, welche eine Synchronisation zwischen den erfassten Scandaten und den zugehörigen Auftragsinformationen erlaubt. Dadurch kann eine automatisierte und auftragsbezogene Auslagerstrategie umgesetzt werden.
+
+Ein wesentlicher Bestandteil dieser Erweiterung ist der Einsatz der Programmiersprache \textbf{Python}. Im Gegensatz zur reinen SPS-Programmierung ermöglicht Python die Verarbeitung komplexerer Datenstrukturen sowie eine flexible Anbindung externer Systeme, wie beispielsweise Datenbanken oder Visualisierungstools.
+
+Durch die Auslagerung von komplexeren Logik- und Datenverarbeitungsprozessen in eine Hochsprache kann die Programmstruktur auf der SPS bewusst vereinfacht gehalten werden. Dies führt zu einer besseren Überschaubarkeit, Wartbarkeit und Erweiterbarkeit des Gesamtsystems.\\\\
+Im folgenden Abschnitt wird der Stand der Technik betrachtet. Dabei werden die wesentlichen Grundlagen und Technologien vorgestellt, die für die Umsetzung der auftragsbasierten Auslagerung erforderlich sind. Die grundlegenden Lagerprozesse selbst werden an dieser Stelle nicht erneut behandelt, da diese bereits in der Dokumentation zur \textbf{T3\_3100} ausführlich beschrieben sind.
+\input{T3200_Kapitel Grundlagen/Auftragsbasierte Lagerung}
+\input{T3200_Kapitel Grundlagen/Scanner}
