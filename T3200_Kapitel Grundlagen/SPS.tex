@@ -1,0 +1,41 @@
+\subsection{Speicherprogrammierbare Steuerungen (SPS)}
+
+Speicherprogrammierbare Steuerungen (SPS) werden in der Industrie zur Automatisierung von Prozessen eingesetzt und bilden die zentrale Steuereinheit vieler Anlagen.\\
+Sie dienen als Ersatz für aufwendig zu implementierende Relais- oder Schützschaltungen. Durch ihren Einsatz können schnellere und effizientere Abläufe innerhalb eines Prozesses realisiert werden.\\
+
+In der modernen Industrie sind kurze Zykluszeiten erforderlich, welche mit rein hardwarebasierten Schaltungen nur schwer erreicht werden können. Eine SPS arbeitet nach einem zyklischen Prinzip, wodurch sowohl einfache als auch komplexe Prozesse in kurzen Zeitabständen ausgeführt werden können.\\
+
+Die zyklische Abarbeitung eines Programms bedeutet, dass ein Programmablauf von Beginn bis Ende sequenziell durchlaufen und anschließend wiederholt wird. Dieser Vorgang wird als \texttt{Zyklus} bezeichnet. Die benötigte Zykluszeit ist dabei stark von der jeweiligen Anwendung abhängig. In logistischen Prozessen beeinflusst sie beispielsweise die Effizienz von Ein- und Auslagerungen, während in der Fertigung oftmals deutlich kürzere Zykluszeiten erforderlich sind.
+
+\subsubsection{Aufgaben}
+
+Eine klassische SPS arbeitet nach dem \textbf{EVA-Prinzip} (Eingabe – Verarbeitung – Ausgabe).\\
+
+Zu Beginn werden Eingänge wie Sensoren, Schalter oder Trigger, beispielsweise von einem Scanner, eingelesen. Diese Eingangssignale werden anschließend innerhalb eines Programms verarbeitet. Im letzten Schritt erfolgt die gezielte Ansteuerung der Ausgänge, beispielsweise zur Steuerung von Aktoren.
+
+\subsubsection{Aufbau}
+
+Der Aufbau einer SPS ist in der Regel kompakt und modular gestaltet. Im Wesentlichen besteht eine SPS aus folgenden Komponenten:
+\begin{itemize}
+	\item CPU
+	\item Ein- und Ausgangsmodule
+	\item Kommunikationsschnittstellen
+\end{itemize}
+
+Die zentrale Verarbeitung erfolgt innerhalb der CPU. Diese verarbeitet die Eingangssignale und steuert auf Basis des Programms die Ausgänge an. Kommunikationsschnittstellen ermöglichen die Verbindung zu externen Systemen, beispielsweise zu einem \textbf{Human Machine Interface (HMI)} oder einem externen Rechner.
+
+\subsubsection{Eigenschaften}
+
+Speicherprogrammierbare Steuerungen weisen eine Reihe spezifischer Eigenschaften auf. Sie sind besonders robust und für den industriellen Einsatz ausgelegt. Eine wesentliche Eigenschaft ist die \textbf{Echtzeitfähigkeit}, welche die Einhaltung definierter Zykluszeiten sicherstellt.\\
+
+Zusätzlich verfügen viele moderne SPS-Systeme über redundante Komponenten. Dies bedeutet, dass wichtige Systemteile mehrfach vorhanden sind, um die Funktionsfähigkeit der Anlage auch im Fehlerfall aufrechtzuerhalten.
+
+\subsubsection{Bezug zur auftragsbasierten Steuerung}
+
+Im Rahmen der auftragsbasierten Steuerung übernimmt die SPS die Ausführung des physikalischen Prozesses. Die übergeordneten Steuerinformationen werden dabei von einer externen Programmanwendung bereitgestellt.\\
+
+Ziel ist es, die SPS-Programmierung möglichst einfach zu halten. Komplexe Datenverarbeitungsaufgaben, wie beispielsweise die Verarbeitung von Datenbankinhalten oder die Kommunikation mit externen Systemen, werden dabei auf einen externen Rechner ausgelagert.\\
+
+In der industriellen Praxis werden jedoch häufig Kompromisse eingegangen. Teilweise werden auch komplexere Datenstrukturen direkt innerhalb der SPS verarbeitet. Dies kann jedoch die Wartbarkeit und Fehlersuche erschweren und sollte daher nur in begrenztem Umfang erfolgen.\\
+
+Moderne SPS-Systeme bieten die Möglichkeit, mit externen Systemen zu kommunizieren. So können beispielsweise Programme in \textbf{Python} verwendet werden, um Daten aus der SPS auszulesen oder Variablen gezielt zu setzen. Dadurch entsteht eine flexible Systemarchitektur, bei der Software- und Steuerungsebene effektiv miteinander kombiniert werden.
