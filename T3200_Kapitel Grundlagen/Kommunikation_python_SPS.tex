@@ -1,0 +1,68 @@
+\subsection{Kommunikation zwischen Python und SPS}
+
+\subsubsection{Allgemeine Einordnung}
+
+Zur Kommunikation zwischen einer Programmanwendung und einer speicherprogrammierbaren Steuerung werden spezielle Kommunikationsprotokolle eingesetzt, welche den Datenaustausch zwischen beiden Systemen ermöglichen.\\
+
+Moderne Automatisierungssysteme sind hierbei in mehrere Ebenen unterteilt:
+\begin{itemize}
+	\item Steuerungsebene (SPS)
+	\item IT-/Softwareebene (PC, Python)
+\end{itemize}
+
+Innerhalb der Steuerungsebene wird der Hauptprozess mithilfe von verknüpften Ein- und Ausgangssignalen gesteuert. Die IT- bzw. Softwareebene ermöglicht hingegen einen gezielten Austausch und die Verarbeitung von Informationen, beispielsweise die Verwaltung von Lagerdaten oder Aufträgen.\\
+
+Der Datenaustausch umfasst dabei verschiedene Informationsarten:
+\begin{itemize}
+	\item Steuerbefehle 
+	\item Statusinformationen
+	\item Prozessdaten
+\end{itemize}
+
+Durch die Übergabe dieser Informationen kann ein dynamisches und automatisiertes Handling von Prozessen realisiert werden.
+
+\subsubsection{Ziel der Kommunikation}
+
+Die Übertragung von Daten von einer Programmanwendung, beispielsweise in \textbf{Python}, an die SPS ermöglicht eine weitergehende Automatisierung von Prozessen. Dabei entfällt die manuelle Eingabe von Werten, wodurch Fehler reduziert und Abläufe beschleunigt werden können.\\
+
+Die SPS übernimmt weiterhin die kontinuierliche Steuerung der Anlage, während komplexere Datenverarbeitungsprozesse extern abgewickelt werden. Zusätzlich besteht die Möglichkeit, Status- und Fehlermeldungen aus der SPS auszulesen und weiterzuverarbeiten.\\
+
+Ein beispielhafter Ablauf gestaltet sich wie folgt:
+
+\begin{center}
+	\texttt{Scan $\rightarrow$ Python $\rightarrow$ SPS $\rightarrow$ Auslagerung}
+\end{center}
+
+\subsubsection{Kommunikationsarten}
+
+Für den erfolgreichen Austausch von Informationen ist eine geeignete Kommunikationsart erforderlich. Grundsätzlich lassen sich zwei wesentliche Arten unterscheiden:
+
+\begin{itemize}
+	\item Serielle Kommunikation (z.B. RS232)
+	\item Netzwerkbasierte Kommunikation (z.B. TCP/IP)
+\end{itemize}
+
+Serielle Schnittstellen werden häufig für die direkte Anbindung von Geräten wie Scannern verwendet. Für die Kommunikation zwischen einer Programmanwendung und der SPS wird in der Regel eine netzwerkbasierte Kommunikation über Ethernet eingesetzt. Diese ermöglicht einen schnellen und flexiblen Datenaustausch zwischen mehreren Systemteilnehmern.
+
+\subsubsection{Kommunikationsprotokoll Snap7}
+
+Für den Datenaustausch zwischen einer Siemens-SPS und externen Anwendungen stehen verschiedene Kommunikationsmöglichkeiten zur Verfügung. Eine verbreitete Lösung ist die Open-Source-Bibliothek \textbf{Snap7}.\\
+
+Snap7 basiert auf dem S7-Kommunikationsprotokoll und ermöglicht es, von externen Anwendungen – beispielsweise in Python – direkt auf Speicherbereiche der SPS zuzugreifen.\\
+
+Zu den wichtigsten Funktionen von Snap7 zählen:
+\begin{itemize}
+	\item Lesen von Daten aus der SPS
+	\item Schreiben von Daten in die SPS
+	\item Zugriff auf Merker, Ein- und Ausgänge sowie Datenbausteine
+\end{itemize}
+
+Durch die Nutzung von Snap7 kann eine Programmanwendung gezielt Variablen innerhalb der SPS setzen oder auslesen. Dies ermöglicht beispielsweise das Starten eines Prozesses auf Basis eines eingelesenen Scanwertes.\\
+
+Im Vergleich dazu verwendet der Hersteller Beckhoff das Kommunikationsprotokoll \textbf{ADS}, welches eine ähnliche Funktionalität bietet und ebenfalls den Zugriff auf Steuerungsvariablen erlaubt.\\
+
+Die Verwendung solcher Protokolle ermöglicht eine klare Trennung zwischen Steuerungslogik und Datenverarbeitung. Während die SPS für die zeitkritische Anlagensteuerung verantwortlich ist, übernimmt die externe Software komplexe Datenverarbeitungsaufgaben.\\
+
+Durch diese Struktur entsteht eine flexible und erweiterbare Systemarchitektur, welche besonders für auftragsbasierte Prozesse in der Logistik geeignet ist.\\
+
+Die im vorliegenden Abschnitt beschriebenen Grundlagen bilden die Basis für die in den folgenden Kapitel dargestellte Konzeptentwicklung- und Umsetzung des Systems. Dabei wird insbesondere auf die konkrete Integration der einzelnen Komponenten eingegangen.
