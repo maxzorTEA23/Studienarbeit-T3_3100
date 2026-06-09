@@ -1,0 +1,100 @@
+\subsection{Systemaufbau}
+
+Zu Beginn der Konzeptentwicklung ist eine Betrachtung des Systemaufbaus von großer Bedeutung.\\
+Im Rahmen der Entwicklung der auftragsbasierten Auslagerung wurden zunächst verschiedene mögliche Systemarchitekturen analysiert und miteinander verglichen.\\
+
+Eine erste Möglichkeit bestand darin, die vollständige auftragsbasierte Steuerung direkt in der \textbf{speicherprogrammierbaren Steuerung (SPS)} umzusetzen. Dies hätte bedeutet, dass sowohl die Ansteuerung des Scanners als auch die gesamte Auftragslogik innerhalb der \textbf{SPS} realisiert wird.\clearpage
+
+Für diese Variante ergeben sich folgende Vor- und Nachteile:\\
+
+\textbf{Vorteile}
+\begin{itemize}
+	\item Zentrale Steuerung aller Funktionen (Einlagern, Auslagern, Umlagern) innerhalb der \textbf{SPS}
+	\item Nur eine Softwarekomponente notwendig
+\end{itemize}
+
+\textbf{Nachteile}
+\begin{itemize}
+	\item Geringe Übersichtlichkeit bei wachsendem Funktionsumfang
+	\item Hoher Programmieraufwand innerhalb der \textbf{SPS}
+	\item Komplexe Umsetzung bei der Verarbeitung strukturierter Daten (z.\,B. Listen oder Datenbanken)
+\end{itemize}
+
+Bei näherer Betrachtung zeigt sich, dass diese Variante insbesondere hinsichtlich \textbf{Wartbarkeit} und \textbf{Erweiterbarkeit} erhebliche Nachteile aufweist. Die Komplexität der Programmierung innerhalb der \textbf{SPS} würde stark ansteigen, wodurch Anpassungen und Fehlersuche erschwert werden.\\
+
+Aus diesem Grund wurde eine zweite Systemarchitektur betrachtet. Bei dieser wird die \textbf{Auftragsverwaltung} vom eigentlichen \textbf{Steuerungsprozess} getrennt. Ein externer Rechner übernimmt die auftragsbasierte Verarbeitung der Daten, während die \textbf{SPS} weiterhin die physikalische Ausführung der Prozesse steuert.\\
+
+Auch für diese Variante ergeben sich charakteristische Vor- und Nachteile:\\
+
+\textbf{Vorteile}
+\begin{itemize}
+	\item Hohe \textbf{Wartbarkeit} durch klare Trennung der Systemkomponenten
+	\item Verbesserte \textbf{Übersichtlichkeit} durch Aufteilung in Funktionsbereiche
+	\item Effiziente Datenverarbeitung durch Nutzung geeigneter Programmiersprachen (z.\,B. \textbf{Python})
+	\item Nutzung vorhandener Kommunikationsschnittstellen (z.\,B. \texttt{RS232}, \texttt{TCP/IP})
+\end{itemize}
+
+\textbf{Nachteile}
+\begin{itemize}
+	\item Höherer Integrationsaufwand durch Kommunikation zwischen mehreren Systemen
+	\item Abhängigkeit von externer Software
+\end{itemize}
+
+Aufgrund der deutlich besseren \textbf{Wartbarkeit}, \textbf{Flexibilität} und \textbf{Erweiterbarkeit} wurde die zweite Variante für die Umsetzung des Systems gewählt. 
+Insbesondere die Trennung von \textbf{Datenverarbeitung} und \textbf{Steuerungslogik} ermöglicht es, komplexe Aufgaben außerhalb der \textbf{SPS} zu realisieren und die Steuerung bewusst einfach zu halten.\\
+
+Diese Architektur entspricht zudem dem Stand moderner \textbf{Automatisierungssysteme}, bei denen \textbf{IT- und Steuerungsebene} zunehmend miteinander vernetzt werden.\\
+
+Im Folgenden ist der resultierende Systemaufbau dargestellt:
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[
+		node distance=2cm,
+		>=latex,
+		font=\small,
+		every node/.style={align=center}
+		]
+		
+		% Nodes
+		\node (scanner) [draw, rectangle, fill=blue!10, minimum width=3.5cm, minimum height=1cm] 
+		{Input\\Scanner (\texttt{RS232}/\texttt{USB})};
+		
+		\node (python) [draw, rectangle, fill=green!10, below=of scanner, minimum width=4cm, minimum height=1cm] 
+		{Programmanwendung\\(\textbf{Python})\\Datenverarbeitung};
+		
+		\node (db) [draw, rectangle, fill=yellow!20, right=4cm of python, minimum width=3.5cm, minimum height=1cm] 
+		{CSV-Datei\\(Aufträge / Artikel)};
+		
+		\node (sps) [draw, rectangle, fill=orange!10, below=of python, minimum width=3.5cm, minimum height=1cm] 
+		{\textbf{SPS}\\(Siemens S7-1500)};
+		
+		\node (actuator) [draw, rectangle, fill=red!10, below=of sps, minimum width=3.5cm, minimum height=1cm] 
+		{Aktorik\\(Motor / Lagerbewegung)};
+		
+		\node (hmi_sps) [draw, rectangle, fill=gray!15, right=4cm of sps, minimum width=3cm, minimum height=1cm] 
+		{HMI\\(SPS-seitig)};
+		
+		% Verbindungen
+		\draw[->, thick] (scanner) -- (python) node[midway, right]{\texttt{RS232}};
+		\draw[->, thick] (sps.west) -- ++(-2,0) |- (scanner.west);
+		
+		\draw[->, thick] (python) -- (sps) node[midway, right]{Snap7 / \texttt{TCP}};
+		\draw[->, thick] (sps) -- (python);
+		
+		\draw[->, thick] (sps) -- (actuator) node[midway, right]{Digital I/O};
+		
+		\draw[->, thick] (sps) -- (hmi_sps) node[midway, above]{\texttt{PROFINET}};
+		
+		\draw[->, thick] (python) -- (db) node[midway, above]{Abgleich} node[midway, above, xshift=-9cm]{Trigger};
+		\draw[->, thick] (db) -- (python);
+		
+		
+		
+	\end{tikzpicture}
+	\caption{Systemaufbau der auftragsbasierten Lagersteuerung}
+	\label{fig:systemaufbau}
+\end{figure}
+Der im vorherigen Abschnitt dargestellte Systemaufbau beschreibt die strukturelle Anordnung der einzelnen Komponenten sowie deren Verknüpfung innerhalb des Gesamtsystems. Aufbauend auf dieser Architektur kann nun der konkrete Ablauf der auftragsbasierten Auslagerung betrachtet werden.\\
+
+Im folgenden Abschnitt wird daher erläutert, wie die einzelnen Komponenten im Zusammenspiel agieren und welche Schritte vom Einlesen eines Bauteilcodes bis zur Ausführung der Auslagerung durchlaufen werden. Dabei wird insbesondere der Datenfluss innerhalb des Systems betrachtet.

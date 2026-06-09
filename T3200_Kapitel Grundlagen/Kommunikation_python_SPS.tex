@@ -10,7 +10,7 @@ Moderne Automatisierungssysteme sind hierbei in mehrere Ebenen unterteilt:
 	\item IT-/Softwareebene (PC, Python)
 \end{itemize}
 
-Innerhalb der Steuerungsebene wird der Hauptprozess mithilfe von verknüpften Ein- und Ausgangssignalen gesteuert. Die IT- bzw. Softwareebene ermöglicht hingegen einen gezielten Austausch und die Verarbeitung von Informationen, beispielsweise die Verwaltung von Lagerdaten oder Aufträgen.\\
+Innerhalb der Steuerungsebene wird der Hauptprozess mithilfe von verknüpften Ein- und Ausgangssignalen gesteuert. Die IT- bzw. Softwareebene ermöglicht hingegen einen gezielten Austausch und die Verarbeitung von Informationen, beispielsweise die Verwaltung von Lagerdaten oder Aufträgen\cite{TCP}.\\
 
 Der Datenaustausch umfasst dabei verschiedene Informationsarten:
 \begin{itemize}
@@ -19,7 +19,7 @@ Der Datenaustausch umfasst dabei verschiedene Informationsarten:
 	\item Prozessdaten
 \end{itemize}
 
-Durch die Übergabe dieser Informationen kann ein dynamisches und automatisiertes Handling von Prozessen realisiert werden.
+Durch die Übergabe dieser Informationen kann ein dynamisches und automatisiertes Handling von Prozessen realisiert werden\cite{TCP}.
 
 \subsubsection{Ziel der Kommunikation}
 
@@ -42,13 +42,13 @@ Für den erfolgreichen Austausch von Informationen ist eine geeignete Kommunikat
 	\item Netzwerkbasierte Kommunikation (z.B. TCP/IP)
 \end{itemize}
 
-Serielle Schnittstellen werden häufig für die direkte Anbindung von Geräten wie Scannern verwendet. Für die Kommunikation zwischen einer Programmanwendung und der SPS wird in der Regel eine netzwerkbasierte Kommunikation über Ethernet eingesetzt. Diese ermöglicht einen schnellen und flexiblen Datenaustausch zwischen mehreren Systemteilnehmern.
+Serielle Schnittstellen werden häufig für die direkte Anbindung von Geräten wie Scannern verwendet. Für die Kommunikation zwischen einer Programmanwendung und der SPS wird in der Regel eine netzwerkbasierte Kommunikation über Ethernet eingesetzt. Diese ermöglicht einen schnellen und flexiblen Datenaustausch zwischen mehreren Systemteilnehmern\cite{TCP}.
 
 \subsubsection{Kommunikationsprotokoll Snap7}
 
 Für den Datenaustausch zwischen einer Siemens-SPS und externen Anwendungen stehen verschiedene Kommunikationsmöglichkeiten zur Verfügung. Eine verbreitete Lösung ist die Open-Source-Bibliothek \textbf{Snap7}.\\
 
-Snap7 basiert auf dem S7-Kommunikationsprotokoll und ermöglicht es, von externen Anwendungen – beispielsweise in Python – direkt auf Speicherbereiche der SPS zuzugreifen.\\
+Snap7 basiert auf dem S7-Kommunikationsprotokoll und ermöglicht es, von externen Anwendungen – beispielsweise in Python – direkt auf Speicherbereiche der SPS zuzugreifen\cite{snap7}.\\
 
 Zu den wichtigsten Funktionen von Snap7 zählen:
 \begin{itemize}
@@ -57,11 +57,11 @@ Zu den wichtigsten Funktionen von Snap7 zählen:
 	\item Zugriff auf Merker, Ein- und Ausgänge sowie Datenbausteine
 \end{itemize}
 
-Durch die Nutzung von Snap7 kann eine Programmanwendung gezielt Variablen innerhalb der SPS setzen oder auslesen. Dies ermöglicht beispielsweise das Starten eines Prozesses auf Basis eines eingelesenen Scanwertes.\\
+Durch die Nutzung von Snap7 kann eine Programmanwendung gezielt Variablen innerhalb der SPS setzen oder auslesen. Dies ermöglicht beispielsweise das Starten eines Prozesses auf Basis eines eingelesenen Scanwertes\cite{snap7}.\\
 
 Im Vergleich dazu verwendet der Hersteller Beckhoff das Kommunikationsprotokoll \textbf{ADS}, welches eine ähnliche Funktionalität bietet und ebenfalls den Zugriff auf Steuerungsvariablen erlaubt.\\
 
-Die Verwendung solcher Protokolle ermöglicht eine klare Trennung zwischen Steuerungslogik und Datenverarbeitung. Während die SPS für die zeitkritische Anlagensteuerung verantwortlich ist, übernimmt die externe Software komplexe Datenverarbeitungsaufgaben.\\
+Die Verwendung solcher Protokolle ermöglicht eine klare Trennung zwischen Steuerungslogik und Datenverarbeitung. Während die SPS für die zeitkritische Anlagensteuerung verantwortlich ist, übernimmt die externe Software komplexe Datenverarbeitungsaufgaben\cite{snap7}.\\
 
 Durch diese Struktur entsteht eine flexible und erweiterbare Systemarchitektur, welche besonders für auftragsbasierte Prozesse in der Logistik geeignet ist.\\
 

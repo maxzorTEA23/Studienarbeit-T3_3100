@@ -30,7 +30,7 @@ Im Folgenden ist eine Übersicht über die wichtigsten Merkmale und Unterschiede
 		Verwendung & Artikeletiketten, Lager & Industrie, Tracking, Datenübertragung \\ \hline
 		Informationsgehalt & Meist nur ID / Nummer & Kann komplexe Daten enthalten \\ \hline
 	\end{tabular}
-	\caption{Vergleich von Barcode- und QR-Code-Systemen}
+	\caption{Vergleich von Barcode- und QR-Code-Systemen; Quelle: \cite{Codes}}
 	\label{tab:Codes}
 \end{table}
 
@@ -57,7 +57,7 @@ Die erzeugte Zeichenfolge entspricht dabei der im Code enthaltenen Information, 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{images/Matrix200.jpg}
-	\caption{Kamerabasierter Scanner; Quelle}
+	\caption{Kamerabasierter Scanner\cite{Datalogic}}
 	\label{fig:MatrixGrundlagen}
 \end{figure}
 \subsubsection{Datenübertragung / Schnittstelle}
@@ -82,11 +82,11 @@ Im Folgenden sind die wichtigsten Eigenschaften und Unterschiede beider Anschlus
 		Implementierung & Einfach, robust & Etwas komplexer \\ \hline
 		Verwendung & Industrie / Automatisierung & PC-Systeme / moderne Geräte \\ \hline
 	\end{tabular}
-	\caption{Vergleich der Schnittstellen RS232 und USB}
+	\caption{Vergleich der Schnittstellen RS232\cite{rs232_mikrocontroller} und USB\cite{usb_standard}}
 	\label{tab:schnittstellen}
 \end{table}
 
-Aus Tabelle \ref{tab:schnittstellen} wird deutlich, dass beide Schnittstellen ihre Berechtigung im industriellen Umfeld besitzen. Während RS232 besonders durch seine einfache und robuste Struktur überzeugt, bietet USB eine höhere Datenübertragungsrate und wird häufig durch virtuelle COM-Ports in bestehende Systeme integriert.\\
+Aus Tabelle \ref{tab:schnittstellen} wird deutlich, dass beide Schnittstellen ihre Berechtigung im industriellen Umfeld besitzen. Während RS232 besonders durch seine einfache und robuste Struktur überzeugt\cite{rs232_mikrocontroller}, bietet USB eine höhere Datenübertragungsrate und wird häufig durch virtuelle COM-Ports in bestehende Systeme integriert\cite{usb_standard}.\\
 
 Schlussendlich werden die erfassten Daten über eine Programmanwendung, beispielsweise in Python oder C, weiterverarbeitet. Dabei können projektabhängige Anpassungen vorgenommen werden, um die Daten entsprechend aufzubereiten. Die eigentliche Prozesslogik wird somit softwareseitig realisiert, wodurch automatisierte Abläufe, wie beispielsweise die Zuordnung von Bauteilen anhand von Scanwerten, angestoßen werden können.\clearpage
 \subsubsection{Vorteile beim Einsatz eines Scanners}
@@ -107,7 +107,7 @@ Der Einsatz von Scannern bietet insbesondere im industriellen und logistischen U
 		Eindeutige Identifikation & Barcodes und QR-Codes ermöglichen klare Zuordnung von Bauteilen \\ \hline
 		Flexibilität & Einsetzbar in verschiedenen Anwendungen und Branchen \\ \hline
 	\end{tabular}
-	\caption{Vorteile des Einsatzes von Scannern in automatisierten Systemen}
+	\caption{Vorteile des Einsatzes von Scannern in automatisierten Systemen\cite{Datalogic}}
 	\label{tab:vorteile_scanner}
 \end{table}
 
